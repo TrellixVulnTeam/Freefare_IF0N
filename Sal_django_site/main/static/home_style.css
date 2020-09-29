@@ -62,6 +62,7 @@ text-align: center;
   position: relative;
   display:block;
   /* background-color: gray; */
+  background-image: url("/images/homepage_back.jpg");
   background-color: gray;
   background-size: cover;
   background-repeat: no-repeat;
@@ -143,12 +144,18 @@ margin-top: 1pt;
   }
 }
 .tab button:hover {
-  background:linear-gradient(to bottom, lightgreen 100%, white 0%);
+  /* background:linear-gradient(to bottom, lightgreen 100%, white 0%);
+  transition: 0.3s; */
+  background-color:lightgreen;
+  /* transition: 0.3s;  */
+  transition: background-color 0.3s ease;
+
 }
 
 .tab button:focus {
   /* box-shadow:inset 0px 1px 0px 0px #ffffff; */
   background:linear-gradient(to bottom, lightgreen 100%, white 0%);
+  transition: 0.3s;
   /* background-color:#ffffff; */
   
 }
@@ -191,11 +198,13 @@ height: 60pt;
   /* text-shadow:0px 1px 0px #ffffff; */
 }
 .search-button:hover {
-  background:linear-gradient(to bottom, lightgreen 100%, #ffffff 0%);
-  background-color:#f6f6f6;
+  /* background:linear-gradient(to bottom, lightgreen 100%, lightgreen 100%); */
+  background-color:lightgreen;
+  /* transition: 0.3s;  */
+  transition: background-color 0.3s ease;
 }
 .search-button:active {
-background-color: linear-gradient(to bottom, lightgreen 100%, #ffffff 0%);
+/* background-color: linear-gradient(to bottom, lightgreen 100%, lightgreen 100%); */
   position:relative;
   top:1px;
 }
