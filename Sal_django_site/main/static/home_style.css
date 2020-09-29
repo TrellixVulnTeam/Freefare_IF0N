@@ -61,8 +61,8 @@ text-align: center;
 .navbar-search-area {
   position: relative;
   display:block;
-  /* background-color: beige; */
-  background-color: beige;
+  /* background-color: gray; */
+  background-color: gray;
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
@@ -72,7 +72,7 @@ text-align: center;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-bottom: 5em;
+  margin-bottom: 2pt;
 }
 
 
@@ -88,11 +88,11 @@ position: relative;
 width: 50%;
 
 margin: auto;
-margin-top: 8.5pc;
-margin-bottom: 9pc;
+margin-top: 4.5pt;
+margin-bottom: 4pc;
 padding: 2pt; 
 /* height: 16pt;  */
-/* margin-top: 15pc; */
+margin-top: 1pt;
 
 }
 
@@ -110,7 +110,7 @@ padding: 2pt;
 }
 
 .tab > .tablinks {
-  box-shadow:inset 0px 1px 0px 0px beige;
+  /* box-shadow:inset 0px 1px 0px 0px beige; */
   /* background:linear-gradient(to bottom, #ffffff 100%, #f6f6f6 100%); */
   background-color: beige;
   border-top-left-radius: 10pt;
@@ -132,7 +132,7 @@ padding: 2pt;
 }
 
 .tablinks:active {
-  background:linear-gradient(to bottom, lightgreen 5%, blue 100%);
+  background:linear-gradient(to bottom, lightgreen 100%, blue 0%);
 }
 
 @media screen and (max-width: 818px) {
@@ -143,12 +143,12 @@ padding: 2pt;
   }
 }
 .tab button:hover {
-  background:linear-gradient(to bottom, lightgreen 8%, white 100%);
+  background:linear-gradient(to bottom, lightgreen 100%, white 0%);
 }
 
 .tab button:focus {
   /* box-shadow:inset 0px 1px 0px 0px #ffffff; */
-  background:linear-gradient(to bottom, lightgreen 5%, white 100%);
+  background:linear-gradient(to bottom, lightgreen 100%, white 0%);
   /* background-color:#ffffff; */
   
 }
@@ -163,39 +163,39 @@ border-radius: 10pt;
 border-top: none;
 background-color: white;
 min-width: 182px;
-width: 520pt;
-height: 60pt;
+width: 560pt;
+height: 70pt;
 }
 
 .search-button {
 margin: auto;
-margin-top: 4pt;
-width: 160pt;
-height: 45pt;
-  box-shadow:inset 0px 0px 0px 0px white;
+width: 200pt;
+height: 60pt;
+  /* box-shadow:inset 0px 0px 0px 0px white; */
   /* background:linear-gradient(to bottom, lightgreen 20%, white 80%); */
   background-color: white;
-  border-radius:10pt;
-  border:6.0pt solid;
-  border-bottom: 6.0pt solid;
-  border-left: 6.0pt solid;
-  border-right: 6.0pt solid;
+  border-radius:20pt;
+  border:6.0pt solid darkslategray;
+  border-bottom: 6.0pt solid darkslategray;
+  border-left: 6.0pt solid darkslategray;
+  border-right: 6.0pt solid darkslategray;
   display:inline-block;
   cursor:pointer;
+  color: darkslategray;
   /* color:#ffffff; */
 
-  font-size: 16pt;
+  font-size: 28pt;
   /* font-weight:bold; */
-  padding:10pt 10pt;
+  padding:5pt 5pt;
   text-decoration:none;
-  text-shadow:0px 1px 0px #ffffff;
+  /* text-shadow:0px 1px 0px #ffffff; */
 }
 .search-button:hover {
-  background:linear-gradient(to bottom, lightgreen 100%, #ffffff 100%);
+  background:linear-gradient(to bottom, lightgreen 100%, #ffffff 0%);
   background-color:#f6f6f6;
 }
 .search-button:active {
-background-color: linear-gradient(to bottom, lightgreen 100%, #ffffff 100%);
+background-color: linear-gradient(to bottom, lightgreen 100%, #ffffff 0%);
   position:relative;
   top:1px;
 }
