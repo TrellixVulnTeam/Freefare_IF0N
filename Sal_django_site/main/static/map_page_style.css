@@ -1,3 +1,7 @@
+body{
+  background-color:ghostwhite;
+}
+
 .input-field {
     margin-left: 0;
     margin-right: 0;
@@ -22,7 +26,13 @@
     height: 100%;
   }
 
+  .card{
+    box-shadow:  20px 20px 60px #d3d3d9, 
+    -20px -20px 60px #ffffff;
+  }
 
+
+  
   #search-button {
     float: right;
     top: 20%;
@@ -85,8 +95,8 @@
 
 
     .card {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      /* border-top-right-radius: 10px;
+      border-top-left-radius: 10px; */
       max-width: 250pt;
       /* max-width: 300; */
       float: left;
@@ -126,6 +136,7 @@
       margin-left: auto;
       margin-right: auto;
       height: 800;
+      
     }
 
     /* .filter-title {
@@ -139,7 +150,8 @@
     .scroll-box {
       overflow-y: scroll;
       height: 200px;
-      padding: 1rem
+      padding: 1rem;
+      
     }
 
 
