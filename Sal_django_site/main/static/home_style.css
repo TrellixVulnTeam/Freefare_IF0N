@@ -95,14 +95,9 @@ text-align: center;
 .navbar-search-area {
   position: relative;
   display:block;
-<<<<<<< HEAD
   /* background-color: gray; */
   background-image: url("/images/homepage_back.jpg");
   background-color: gray;
-=======
-  background-image: url('images/map-side.jpg');
-  background-color: #F7F7F7;
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
@@ -128,17 +123,11 @@ grid-template-rows: 1fr 1fr; */
 position: relative;
 width: fit-content;
 margin: auto;
-<<<<<<< HEAD
 margin-top: 4.5pt;
 margin-bottom: 4pc;
 padding: 2pt; 
 /* height: 16pt;  */
 margin-top: 1pt;
-=======
-margin-bottom: 5pc;
-padding: 2pt; 
-
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
 
 }
 
@@ -156,11 +145,7 @@ padding: 2pt;
 }
 
 .tab > .tablinks {
-<<<<<<< HEAD
   /* box-shadow:inset 0px 1px 0px 0px beige; */
-=======
-  box-shadow:inset 0px 1px 0px 0px #F7F7F7;
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
   /* background:linear-gradient(to bottom, #ffffff 100%, #f6f6f6 100%); */
   background-color: #F7F7F7;
   border-top-left-radius: 10pt;
@@ -182,13 +167,7 @@ padding: 2pt;
 }
 
 .tablinks:active {
-<<<<<<< HEAD
   background:linear-gradient(to bottom, lightgreen 100%, blue 0%);
-=======
-  background: #F7F7F7;
-  
-  /* background:linear-gradient(to bottom, lightgreen 5%, blue 100%); */
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
 }
 /* .tablinks:hover, .tablinks:focus {
   background-color: rgba(0,0,0,0.1);
@@ -196,26 +175,12 @@ padding: 2pt;
 
 
 .tab button:hover {
-<<<<<<< HEAD
   /* background:linear-gradient(to bottom, lightgreen 100%, white 0%);
   transition: 0.3s; */
   background-color:lightgreen;
   /* transition: 0.3s;  */
   transition: background-color 0.3s ease;
 
-=======
-  /* background:linear-gradient(to bottom, #9fd356 8%, white 100%); */
-  transform: scale(1.15);
-  /* background-color: rgba(0,0,0,0.2); */
-  background-color: rgba(247, 247, 247, 0.8);
-  transition: background-color .3s;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-  /* transition: background-color .2s ease-out;
-  cursor: pointer; */
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
 }
 
 .tab button:focus {
@@ -227,12 +192,8 @@ padding: 2pt;
     transition-timing-function: ease;
     transition-delay: 0s;
   /* box-shadow:inset 0px 1px 0px 0px #ffffff; */
-<<<<<<< HEAD
   background:linear-gradient(to bottom, lightgreen 100%, white 0%);
   transition: 0.3s;
-=======
-  /* background:linear-gradient(to bottom, lightgreen 5%, white 100%); */
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
   /* background-color:#ffffff; */
   
 }
@@ -247,18 +208,12 @@ border-radius: 10pt;
 border-top: none;
 background-color: white;
 min-width: 182px;
-<<<<<<< HEAD
 width: 560pt;
 height: 70pt;
-=======
-max-width: 520pt;
-height: 60pt;
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
 }
 
 .search-button {
 margin: auto;
-<<<<<<< HEAD
 width: 200pt;
 height: 60pt;
   /* box-shadow:inset 0px 0px 0px 0px white; */
@@ -269,26 +224,11 @@ height: 60pt;
   border-bottom: 6.0pt solid darkslategray;
   border-left: 6.0pt solid darkslategray;
   border-right: 6.0pt solid darkslategray;
-=======
-margin-top: 4pt;
-width: 160pt;
-height: 45pt;
-color: #342E37;
-  box-shadow:inset 0px 0px 0px 0px white;
-  /* background:linear-gradient(to bottom, lightgreen 20%, white 80%); */
-  background-color: white;
-  border-radius:10pt;
-  border:6.0pt solid #F7F7F7;
-  /* border-bottom: 6.0pt solid;
-  border-left: 6.0pt solid;
-  border-right: 6.0pt solid; */
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
   display:inline-block;
   cursor:pointer;
   color: darkslategray;
   /* color:#ffffff; */
 
-<<<<<<< HEAD
   font-size: 28pt;
   /* font-weight:bold; */
   padding:5pt 5pt;
@@ -303,24 +243,6 @@ color: #342E37;
 }
 .search-button:active {
 /* background-color: linear-gradient(to bottom, lightgreen 100%, lightgreen 100%); */
-=======
-  line-height: 16px;
-  font-size: 16pt;
-  /* font-weight:bold; */
-  padding:10pt 10pt;
-  /* text-decoration:none; */
-  /* text-shadow:0px 1px 0px #ffffff; */
-}
-.search-button:hover {
-  transform: scale(1.15);
-  /* background:linear-gradient(to bottom, lightgreen 100%, #ffffff 100%);
-  background-color:#f6f6f6; */
-}
-.search-button:active,.search-button:focus {
-  transform: scale(1.15);
-  background-color: white;
-/* background-color: linear-gradient(to bottom, lightgreen 100%, #ffffff 100%); */
->>>>>>> b9e2e8a0b22831bce3b7b9afefc8c701e21b7ca2
   position:relative;
   top:1px;
   
