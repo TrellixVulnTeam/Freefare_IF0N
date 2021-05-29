@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['freefoodsal.com', 'www.freefoodsal.com']
+ALLOWED_HOSTS = ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235']
 
 
 # Application definition
