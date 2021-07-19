@@ -82,7 +82,7 @@ text-align: center;
 }
 
 .cta-test {
-  color: #F7F7F7;
+  color: rgb(35, 87, 19);
 }
 
 .navbar-search-area {
@@ -90,7 +90,7 @@ text-align: center;
   display:block;
   /* background-color: gray; */
   background-image: url("/images/foodbackground.png");
-  background-color: rgb(35, 87, 19);
+  background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   height: auto;
   width: auto;
