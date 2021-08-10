@@ -82,14 +82,14 @@ text-align: center;
 }
 
 .cta-test {
-  color: rgb(35, 87, 19);
+  color:  #342E37;
 }
 
 .navbar-search-area {
   position: relative;
   display:block;
   /* background-color: gray; */
-  background-image: url("/images/foodbackground.png");
+  background-image: url("/images/map-side.jpg");
   background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   height: auto;
@@ -152,7 +152,8 @@ margin-top: 1pt;
 }
 
 .tablinks:active {
-  background:linear-gradient(to bottom, lightgreen 100%, blue 0%);
+  /* background:linear-gradient(to bottom, lightgreen 100%, blue 0%); */
+  background-color: lightblue;
   background: #F7F7F7;
 }
 
@@ -161,11 +162,11 @@ margin-top: 1pt;
 .tab button:hover {
   /* background:linear-gradient(to bottom, lightgreen 100%, white 0%);
   transition: 0.3s; */
-  background-color:lightgreen;
+  background-color:rgba(0, 0, 255, 0.637);
   /* transition: 0.3s;  */
   transition: background-color 0.3s ease;
 
-  transform: scale(1.15);
+  transform: scale(1.10);
   background-color: rgba(247, 247, 247, 0.8);
   transition: background-color .3s;
     transition-property: background-color;
@@ -182,7 +183,7 @@ margin-top: 1pt;
     transition-timing-function: ease;
     transition-delay: 0s;
   /* box-shadow:inset 0px 1px 0px 0px #ffffff; */
-  background:linear-gradient(to bottom, lightgreen 100%, white 0%);
+  background:linear-gradient(to bottom, rgba(247, 247, 247, 0.8), white 0%);
   transition: 0.3s;
   /* background-color:#ffffff; */
   
@@ -227,8 +228,8 @@ height: 60pt;
 }
 .search-button:hover {
   /* background:linear-gradient(to bottom, lightgreen 100%, lightgreen 100%); */
-  background-color:lightgreen;
-  /* transition: 0.3s;  */
+  background-color:rgb(194, 247, 194);
+  transition: 0.8s;  
   transition: background-color 0.3s ease;
 }
 .search-button:active {
@@ -249,11 +250,12 @@ color: #342E37;
   padding:10pt 10pt;
 }
 .search-button:hover {
-  transform: scale(1.15);
+  transform: scale(1.10);
+
 }
 
 .search-button:active,.search-button:focus {
-  transform: scale(1.15);
+  transform: scale(1.10);
   background-color: white;
   position:relative;
   top:1px;
