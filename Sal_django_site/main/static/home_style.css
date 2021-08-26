@@ -134,8 +134,9 @@ padding: 2pt;
   border-top-left-radius: 10pt;
   border-top-right-radius: 10pt;
   border-bottom: none;
-  border-left: 6.0pt solid #F7F7F7;
-  border-right: 6.0pt solid #F7F7F7;
+  border-style: none;
+  /* border-left: 6.0pt solid #F7F7F7;
+  border-right: 6.0pt solid #F7F7F7; */
   display:inline-block;
   cursor:pointer;
   color: #342E37;
