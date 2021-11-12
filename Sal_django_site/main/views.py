@@ -110,7 +110,7 @@ def signup(request):
             message = get_template("main/account_activation_email.html").render({
               'confirm_url': url
             })
-            mail = EmailMessage('Sal Hates Waste Confirmation Email', message, to=[user.email], from_email=settings.EMAIL_HOST_USER)
+            mail = EmailMessage('Freefare Confirmation Email', message, to=[user.email], from_email=settings.EMAIL_HOST_USER)
             mail.content_subtype = 'html'
             mail.send()
             messages.success(request,  f'A confirmation email has been sent to {user.email}. Please confirm to finish registering')

@@ -48,18 +48,16 @@
     border-radius: 7pt;
     margin: 50pt;
     margin-top: 20pt;
-    padding: 10pt;  
+    padding: 11pt;  
   }
 
   .nav-wrapper {
     width: 90%;
+    margin-left:2.5%;
+    margin-right:5%;
   }
 
-  li{
-    font-family: 'latoregular', Arial, sans-serif;
-    font-weight:normal;
-    font-style:normal;
-  }
+
 li:hover {
   color: #F7F7F7;
   transition: 0.3s;
@@ -74,29 +72,32 @@ li:hover {
 
     <nav class="z-depth-0" style="background-color: white" role="navigation">
       <div class="nav-wrapper container" style="background-color:white">
-        <a href="/"  class="center brand-logo">
-          <img alt="Logo" src="{% static 'images/sal_hates_waste_logo.png' %}" height="60" style="display: block;  color: #ffffff; font-size: 16px; margin-top:5;" >
-      </a>
-        <ul class="right hide-on-med-and-down">
-          {% if user.is_authenticated %}
-          <li><a href="/my-account" style="color:#342E37;font-size:14pt;">My Account</a></li>
-          <li><a href="/my-posts" style="color:#342E37;font-size:14pt;">My Posts</a></li>
-          <li><a href="/logout" style="color:#342E37;font-size:14pt;">Logout</a></li>
-          {% else %}
-          <li><a href="/login" style="color:#342E37;font-size:14pt;">Login</a></li>
-          <li><a href="/signup" style="color:#342E37;font-size:14pt;">Sign Up</a></li>
-          
-          {% endif %}
-        </ul>
+
 
         <ul class="left hide-on-med-and-down">
-          <li><a href="/#about-title" style="color:#342E37;font-size:13pt;">About</a></li>
-          <li><a href="/map_page" style="color:#342E37;font-size:13pt;">Map</a></li>
-          <li><a href="/contact" style="color:#342E37;font-size:13pt;">Contact</a></li>
-          <li><a href="/profile-view" style="color:#342E37;font-size:13pt;">Profile</a></li>
-          <li><a href="/volunteer" style="color:#342E37;font-size:13pt;">Volunteer!</a></li>
+          <li>
+            <a href="/" > 
+              <img alt="Logo" src="{% static 'images/clear_freefare_full_logo.svg' %}" height="40" style=" margin:12pt;" >
+            </a>
+          </li>
+          <li><a href="/#about-title" style="color:#342E37;font-size:11pt;">About</a></li>
+          <li><a href="/map_page" style="color:#342E37;font-size:11pt;">Map</a></li>
+          <li><a href="/contact" style="color:#342E37;font-size:11pt;">Contact</a></li>
+          <li><a href="/profile-view" style="color:#342E37;font-size:11pt;">Profile</a></li>
+          <li><a href="/volunteer" style="color:#342E37;font-size:11pt;">Volunteer!</a></li>
         </ul>
 
+        <ul class="right hide-on-med-and-down">
+
+          {% if user.is_authenticated %}
+          <li><a href="/my-account" style="color:#342E37;font-size:11pt;">My Account</a></li>
+          <li><a href="/my-posts" style="color:#342E37;font-size:11pt;">My Posts</a></li>
+          <li><a href="/logout" style="color:#342E37;font-size:11pt;">Logout</a></li>
+          {% else %}
+          <li><a href="/login" style="color:#342E37;font-size:11pt;">Login</a></li>
+          <li><a href="/signup" style="color:#342E37;font-size:11pt;">Sign Up</a></li>
+          {% endif %}
+        </ul>
         <ul id="nav-mobile" class="sidenav">
           <li><a href="/" style="color:#342E37; font-size: x-large;">Home</a></li>
           <li><a href="/#about-title"  style="color:#342E37; font-size: x-large;">About</a></li>
