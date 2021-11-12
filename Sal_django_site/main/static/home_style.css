@@ -50,6 +50,7 @@ text-align: center;
 } 
 
 .card{
+  border-radius: 20px;
   max-width: 450px;
   margin-right: 1rem;
   margin-left: 1rem;
@@ -88,7 +89,7 @@ text-align: center;
 .navbar-search-area {
   position: relative;
   display:block;
-  background-image: url('images/map-side.jpg');
+  background-image:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('images/map-side.jpg');
   background-color: #F7F7F7;
   background-size: cover;
   background-repeat: no-repeat;

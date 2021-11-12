@@ -1,14 +1,18 @@
-<footer class="page-footer" style="background-color:#147358ff; box-shadow: 0 1pt 0 #FFF, 0 1pt 0 #CFCFCF inset;">
+{% load static %}
+<footer class="page-footer" style="background-color:#0f402eff; box-shadow: 0 1pt 0 #FFF, 0 1pt 0 #CFCFCF inset;">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 style="color: #0f402eff">Company Bio</h5>
-        <p style="color: #f2f2f2ff">We are couple of somewhat recent college  grads trying to help out. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+      <div class="col l2 s12">
+<img src="{% static 'images/dark_green_freefare_logo.svg' %}" alt="dark green Freefare logo">
+      </div>
+      <div class="col l3 s12">
+        <h5 style="color: #f2f2f2ff">Fun Food Fact</h5>
+        <p style="color: #f2f2f2ff">You can test if a cranberry is ripe by seeing if it bounces when you drop it.</p>
 
 
       </div>
       <div class="col l3 s12">
-        <h5 style="color: #0f402eff">Social Media</h5>
+        <h5 style="color: #f2f2f2ff">Social Media</h5>
         <ul>
           <li><a href="#!" style="color: #f2f2f2ff">Facebook</a></li>
           <li><a href="#!" style="color: #f2f2f2ff">Instagram</a></li>
@@ -16,7 +20,7 @@
         </ul>
       </div>
       <div class="col l3 s12">
-        <h5 style="color: #0f402eff">Menu</h5>
+        <h5 style="color: #f2f2f2ff">Menu</h5>
         <ul>
           <li><a href="/#about-title" style="color: #f2f2f2ff">About</a></li>
           <li><a href="map_page" style="color: #f2f2f2ff">Map</a></li>
@@ -27,8 +31,8 @@
     </div>
   </div>
   <div class="footer-copyright">
-    <div class="container" style="color: #342E37">
-    Made with <a class="darkslategray-text" href="http://materializecss.com">Materialize</a>
+    <div class="container" style="color: #147358ff">
+    Made with <a style="color: #147358ff" href="http://materializecss.com">Materialize</a>
     </div>
   </div>
 </footer>
