@@ -1,12 +1,12 @@
 
   .select {
     display: block;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2ff;
 
   }
 
   body {
-    background-color: ghostwhite;
+    background-color: #f2f2f2ff;
     background-size: cover;
   }
   
@@ -17,7 +17,7 @@
   }
 
   .title-text {
-    color: ghostwhite;
+    color: #f2f2f2ff;
     margin-left: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -70,7 +70,7 @@
   .input-field {
     margin-left: auto;
     margin-right: auto;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2ff;
   }
 
 
@@ -88,7 +88,7 @@
   .textarea{
     margin: 0px;  
     height: 228px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2ff;
     border: none;
   }
 
@@ -106,7 +106,7 @@
   }
 
   #close{
-    color: ghostwhite;
+    color: #f2f2f2ff;
     padding-top: 8px;
   }
 

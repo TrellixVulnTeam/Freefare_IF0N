@@ -198,11 +198,11 @@ body{
     background: #F9FBFA;
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
     background-size: 100%;
-    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #C7CED6), color-stop(100%, #F9FBFA));
-    background-image: -webkit-linear-gradient(top, #C7CED6, #F9FBFA);
-    background-image: -moz-linear-gradient(top, #C7CED6, #F9FBFA);
-    background-image: -o-linear-gradient(top, #C7CED6, #F9FBFA);
-    background-image: linear-gradient(top, #C7CED6, #F9FBFA);
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f2f2f2ff), color-stop(100%, #F9FBFA));
+    background-image: -webkit-linear-gradient(top, #f2f2f2ff, #F9FBFA);
+    background-image: -moz-linear-gradient(top, #f2f2f2ff, #F9FBFA);
+    background-image: -o-linear-gradient(top, #f2f2f2ff, #F9FBFA);
+    background-image: linear-gradient(top, #f2f2f2ff, #F9FBFA);
     width: 22px;
     height: 22px;
     -webkit-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6), 0 -1px 0 1px rgba(0, 0, 0, 0.15) inset, 0 1px 0 1px rgba(255, 255, 255, 0.9) inset;

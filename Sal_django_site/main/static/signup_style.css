@@ -1,12 +1,12 @@
 html,body{
-    background-color:ghostwhite;
+    background-color:#f2f2f2ff;
     background-image: url('images/map-side.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   .box {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #f2f2f2ff;
     border-radius: 5px;
     font-family: sans-serif;
     text-align: center;
@@ -25,14 +25,14 @@ html,body{
 }
 
 .inactive,.inactive:visited{
-    color: #F7F7F7;
+    color: #f2f2f2ff;
     background-color:#342e37;
 }
 
 .active:visited,
 .active:hover,
 .active:focus{
-    background-color: rgb(255, 255, 255);
+    background-color: #f2f2f2ff;
     transition: background-color .3s;
     transition-property: background-color;
     transition-duration: 0.3s;
@@ -91,7 +91,7 @@ html,body{
 
     .btn-flat:hover,
     .btn-flat {
-        background-color: white;
+        background-color: #f2f2f2ff;
         color: black;
         margin-top: 2%;
         margin-right: 2%;
@@ -138,11 +138,11 @@ html,body{
     .sign-in__icon-wrapper {
         -webkit-tap-highlight-color: transparent;
         visibility: visible!important;
-        color: #fff;
+        color: #f2f2f2ff;
         pointer-events: none;
         padding: 3px 3px 3px 3px;
         border-radius: 4px;
-        background-color: #fff;
+        background-color: #f2f2f2ff;
         line-height: 1.3333;
         display: inline-flex;
     }
