@@ -19,4 +19,5 @@ function searchPlace() {
     place = document.getElementById("place").value
     window.location.href='map_page'
     sessionStorage.setItem("place", place);
+    return false;
 }  
