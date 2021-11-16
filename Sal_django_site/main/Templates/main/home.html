@@ -25,16 +25,19 @@
               class="material-icons tab-icon">local_grocery_store</i></button>
         </div>
         <div>
-          <div id="Find-food" class="tabcontent">
-            <input id="place" type="text" placeholder="Type an address to find organizations looking to donate">
+          <div id="Find-food" class="tabcontent row">
+            <a id="search-button" onclick="searchPlace()"><i class="material-icons" >search</i></a>
+            
+            <input id="place" class="col" type="text" placeholder="Type an address to find organizations looking to donate">
+
           </div>
           <div id="Donate" class="tabcontent">
             <input id="place" type="text" placeholder="Type an address to find organizations looking for donations">
           </div>
         </div>
-        <br><br>
-        <button class="search-button" onclick="searchPlace()"> Search! <i id="search-cta"
-            class="material-icons right">location_searching</i></button>
+        <br>
+        <!-- <button class="search-button" onclick="searchPlace()"> Search! <i id="search-cta"
+            class="material-icons right">location_searching</i></button> -->
       </div>
     </section>
 

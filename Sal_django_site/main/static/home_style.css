@@ -1,32 +1,29 @@
- 
 html {
   scroll-behavior: 2 smooth;
 }
 
-body{
-  background-color:ghostwhite;
+body {
+  background-color: ghostwhite;
 }
 
 .about-container {
-height: auto;
-margin: auto;
-margin-bottom: 4em;
-text-align: center;
+  height: auto;
+  margin: auto;
+  margin-bottom: 4em;
+  text-align: center;
 }
-
 
 .about-header {
-  margin-top: .5em;
+  margin-top: 0.5em;
   font-size: 50pt;
-  margin-bottom: .5em;
-  
+  margin-bottom: 0.5em;
 }
 .about-header > h1 {
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .us {
-  color: #342E37;
+  color: #342e37;
 }
 
 .about-header > a {
@@ -40,22 +37,21 @@ text-align: center;
   margin-top: 1em;
 }
 
-.about-content>* {
+.about-content > * {
   flex: 1 1 300px;
 }
 
 .about-box {
   margin-bottom: 3.5em;
   max-width: 450px;
-} 
+}
 
-.card{
+.card {
   border-radius: 20px;
   max-width: 450px;
   margin-right: 1rem;
   margin-left: 1rem;
-  box-shadow:  20px 20px 60px #d3d3d9, 
-             -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #d3d3d9, -20px -20px 60px #ffffff;
 }
 
 .card .card-content p {
@@ -69,7 +65,7 @@ text-align: center;
   padding: 10pt;
   padding-bottom: 0;
   text-align: center;
-  color: #342E37;
+  color: #342e37;
 }
 
 .about-desc > p {
@@ -83,14 +79,16 @@ text-align: center;
 }
 
 .cta-test {
-  color: #F7F7F7;
+  color: #f7f7f7;
+  margin: 2.8rem 0 2.8rem 0;
 }
 
 .navbar-search-area {
   position: relative;
-  display:block;
-  background-image:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('images/map-side.jpg');
-  background-color: #F7F7F7;
+  display: block;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("images/map-side.jpg");
+  background-color: #f7f7f7;
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
@@ -98,22 +96,22 @@ text-align: center;
   padding: 3rem 2rem;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin-bottom: 5em;
 }
 
-input{
+input {
   text-overflow: ellipsis;
 }
 
 .search-area {
-align-items: center;
-display: grid;
-position: relative;
-width: fit-content;
-margin: auto;
-margin-bottom: 5pc;
-padding: 2pt; 
+  align-items: center;
+  display: grid;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5pc;
+  padding: 2pt;
 }
 
 .tab {
@@ -126,112 +124,134 @@ padding: 2pt;
   transition: 0.3s;
   align-items: center;
   min-width: 181.5px;
-
 }
 
 .tab > .tablinks {
-  box-shadow:inset 0px 1px 0px 0px #F7F7F7;
-  background-color: #F7F7F7;
+  box-shadow: inset 0px 1px 0px 0px #f7f7f7;
+  background-color: #f7f7f7;
   border-top-left-radius: 10pt;
   border-top-right-radius: 10pt;
   border-bottom: none;
   border-style: none;
   /* border-left: 6.0pt solid #F7F7F7;
   border-right: 6.0pt solid #F7F7F7; */
-  display:inline-block;
-  cursor:pointer;
-  color: #342E37;
-  font-size: 22pt;
-  padding:8pt 20pt;
-  text-decoration:none;
+  display: inline-block;
+  cursor: pointer;
+  color: #342e37;
+  font-size: 18pt;
+  padding: 8pt 20pt;
+
   min-width: 182px;
 }
 
 .tablinks:active {
-  background: #F7F7F7;
+  background: #f7f7f7;
 }
-
-
 
 .tab button:hover {
   transform: scale(1.15);
   background-color: rgba(247, 247, 247, 0.8);
-  transition: background-color .3s;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+  transition: transform 0.7s;
+  transition: background-color 0.7s;
+  transition-property: background-color;
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .tab button:focus {
   background-color: rgba(247, 247, 247, 0.8);
-  transition: background-color .3s;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+  transition: transform 0.7s;
+  transition: background-color 0.7s;
+  transition-property: background-color;
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .tabcontent {
-font-size: 5px;
-display: none;
-margin: auto;
-padding: 12px 24px;
-border: 6.0pt solid white;
-border-radius: 10pt;
-border-top: none;
-background-color: white;
-min-width: 182px;
-max-width: 520pt;
-height: 60pt;
+  font-size: 5px;
+  display: none;
+  margin: auto;
+  padding: 12px 24px;
+  border: 6pt solid white;
+  border-radius: 10pt;
+  border-top: none;
+  background-color: white;
+  min-width: 182px;
+  max-width: 520pt;
+  height: 60pt;
+}
+
+#search-button {
+  /* float: right; */
+  /* top: 20%; */
+  margin-top: 20px;
+  padding-left: 10px;
+  display: inline-flex;
+  cursor:hand;
+  color: #342e37;
+
 }
 
 .search-button {
-margin: auto;
-margin-top: 4pt;
-width: 160pt;
-height: 45pt;
-color: #342E37;
-  box-shadow:inset 0px 0px 0px 0px white;
+  margin: auto;
+  margin-top: 4pt;
+  width: 160pt;
+  height: 45pt;
+  color: #342e37;
+  box-shadow: inset 0px 0px 0px 0px white;
   background-color: white;
-  border-radius:10pt;
-  border:6.0pt solid #F7F7F7;
-  display:inline-block;
-  cursor:pointer;
+  border-radius: 10pt;
+  border: 6pt solid #f7f7f7;
+  display: inline-block;
+  cursor: pointer;
 
   line-height: 16px;
   font-size: 16pt;
-  padding:10pt 10pt;
+  padding: 10pt 10pt;
 }
 .search-button:hover {
   transform: scale(1.15);
+  /* transition: transform .7s; */
 }
 
-.search-button:active,.search-button:focus {
+.search-button:active,
+.search-button:focus {
+  transition: background-color 0.7s;
   transform: scale(1.15);
   background-color: white;
-  position:relative;
-  top:1px;
+  position: relative;
+  top: 1px;
 }
 
-#search-cta{
+#place{
+  width: 94%;
+}
+#Find-food{   
+  display: inline-block;
+  /* height: 100%; */
+  vertical-align: middle;
+
+}
+#search-cta {
   line-height: 16px;
 }
 
-#trash-img{
+#trash-img {
   margin-top: 2.7rem;
 }
 
-#taco-img{
+#taco-img {
   margin-top: 3.5rem;
 }
 
-#delivery-img{
+#delivery-img {
   margin-top: 1rem;
 }
 
 @media screen and (min-width: 521px) {
-  .tab-icon{
+  .tab-icon {
     float: right;
     margin-left: 15px;
     line-height: 35px;
@@ -239,15 +259,14 @@ color: #342E37;
 }
 
 @media screen and (max-width: 818px) {
-  .tab > .tablinks{ 
+  .tab > .tablinks {
     border-bottom-left-radius: 10pt;
     border-bottom-right-radius: 10pt;
-    
   }
 }
 
 @media screen and (max-width: 520px) {
-  .cta-test{
+  .cta-test {
     margin-bottom: 3rem;
   }
 
@@ -263,10 +282,9 @@ color: #342E37;
     font-size: 1.8rem;
   }
 
-  .tab-icon{
+  .tab-icon {
     font-size: 15px;
     line-height: 35px;
     margin-left: 3px;
   }
-
 }
