@@ -284,3 +284,9 @@ input {
     margin-left: 3px;
   }
 }
+
+
+  .material-icons:hover {
+    color: #f25e5eff !important;
+    border-radius: 25px;
+  }
