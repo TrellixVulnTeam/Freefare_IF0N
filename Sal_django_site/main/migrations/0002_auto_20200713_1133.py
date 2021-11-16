@@ -32,7 +32,8 @@ class Migration(migrations.Migration):
                 ('org_email', models.EmailField(max_length=254, unique=True, verbose_name='Your Organizations Email')),
                 ('image', models.ImageField(default='default.jpg', upload_to='profile_pics')),
                 ('associated_user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                # ('org_address', address.models.AddressField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='address.Address')),
+                ('org_address', models.CharField(
+        'Your Organizations Location', max_length=80, default="123 Test St.", null=False)),
             ],
         ),
     ]

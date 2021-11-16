@@ -209,6 +209,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email']
 # TAKENOTE this library is for fromatting forms. might be useful editing the profiles 'materializecssform'
 #https://pypi.org/project/django-materializecss-form/
 
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 # INSTALLED_APPS = (
 #      'materializecssform',

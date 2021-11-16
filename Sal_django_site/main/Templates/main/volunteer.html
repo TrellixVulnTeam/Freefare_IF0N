@@ -1,18 +1,23 @@
-{% extends 'main/header.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'main/header.html' %} {% load static %} {% block content %}
 
 <head>
   <title>Volunteer - Freefare</title>
   {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'profile_view_style.css' %}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'profile_view_style.css' %}"
+  />
 </head>
-
-
+<style>
+    .main-text{
+        margin-bottom: 20px;
+    }
+</style>
 <body>
-<div class="container col " style="margin-bottom: 12em;">
+  <div class="container col" style="margin-bottom: 12em">
     <div class="card hoverable">
+<<<<<<< HEAD
         <div class="title-banner">
             <h3 class="title-text center-align" style="margin: 50pt; word-spacing: 2pt; "> There's free food everywhere. </h3>
         </div>
@@ -47,8 +52,34 @@
             <br>
             </p>
         </div>
+=======
+      <div class="title-banner">
+        <h4 class="title-text center-align">
+          Imagine if you always knew where to find free food.
+        </h4>
+      </div>
+      <div class="main-text">
+        <h6 class="center-block" style="margin: 30pt; word-spacing: 2pt">
+          Freefare is a project born from the persistent hate for food waste
+          that brought us together. We first started Freefare as a way for us --
+          then, two lonely and hungry recent college grads --, to find free food
+          around our area. But when the pandemic hit, we still had our jobs and
+          could afford food. But many others didn’t, and couldn’t.
+          <br><br>
+          The supply and demand mismatches we witnessed at the beginning of the
+          Covid-19 pandemic inspired us to take the project more seriously.
+          There were people in downtown Hartford begging for food only 500 feet
+          away from a church that was giving it away. While restaurants, farms
+          and groceries were initially left with excess produce, many pantries
+          and soup kitchens found themselves running bare trying to feed the
+          newly jobless and hungry. The supply and demand for free food was
+          there, but nobody really knew where.
+<br/><br/>
+        </h6>
+      </div>
+>>>>>>> dddc8a5045f875fbae42d8e5de71436cee1e5670
     </div>
-</div>
+  </div>
   {% include 'main/footer.html' %}
 </body>
 

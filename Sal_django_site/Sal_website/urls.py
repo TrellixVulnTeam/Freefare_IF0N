@@ -32,7 +32,6 @@ urlpatterns = [
 
 
 
-
     # path('admin/', include('admin.site.urls')),
     
 ]
