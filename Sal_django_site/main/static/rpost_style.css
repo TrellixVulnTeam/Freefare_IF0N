@@ -60,6 +60,13 @@
         font-size: 14px;
     }
 
+    #moreAvail{
+        cursor:hand;
+    }
+    #lessAvail{
+        cursor:hand;
+    }
+    
     .errorlist > li {
         color: #f44336;
         font-size: 16px;

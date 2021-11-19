@@ -129,6 +129,12 @@
     .last-row{
         margin-bottom: 0;
     }
+    #moreAvail{
+        cursor:hand;
+    }
+    #lessAvail{
+        cursor:hand;
+    }
     
     #address-status{
         margin-bottom: 2rem;
