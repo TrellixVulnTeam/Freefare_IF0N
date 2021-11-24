@@ -117,6 +117,15 @@
   </div>
 
   <script> document.getElementById("defaultOpen").click(); </script>
+  <script>
+    var input = document.getElementById("place");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("search-button").click();
+      }
+    });
+  </script>
 
 </body>
 
