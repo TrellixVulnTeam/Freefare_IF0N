@@ -83,3 +83,4 @@ js_info_dict = {
 # jsi18n can be anything you like here
 urlpatterns += [
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), js_info_dict),
+]
