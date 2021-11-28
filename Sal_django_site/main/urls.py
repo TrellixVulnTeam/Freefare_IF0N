@@ -23,6 +23,7 @@ from django.contrib.auth import views as auth_views
 from . import views
 from django.contrib import admin
 from .tokens import user_tokenizer
+from django.contrib.auth.tokens import default_token_generator
 from .views import contactView, successView, volunteerView
 
 # app_name = 'main'
@@ -31,6 +32,7 @@ urlpatterns = [
     path("", views.homepage, name="homepage"),
     path("signup", views.signup, name="signup"),
     path("login", views.login_request, name="login"),
+    # url(r'^login/$', views.login_request, name="login"),
     path("logout", views.logout_request, name="logout"),
     path("reset-password-confirmation", views.reset_confirmation_sent, name='password_reset_confirm_sent'),
     path("email-test1", views.email_test1, name="email-test1"),
@@ -53,7 +55,7 @@ urlpatterns = [
     path('reset-password', auth_views.PasswordResetView.as_view(template_name='main/reset_password.html',
       html_email_template_name='main/reset_password_email.html',
       success_url=settings.LOGIN_URL,
-      token_generator=user_tokenizer),
+      token_generator=default_token_generator),
       name='reset_password'),
     path(
         'reset-password-confirmation/<str:uidb64>/<str:token>/',
@@ -61,7 +63,7 @@ urlpatterns = [
         template_name='main/reset_password_update.html', 
         post_reset_login=True,
         post_reset_login_backend='django.contrib.auth.backends.ModelBackend',
-        token_generator=user_tokenizer,
+        token_generator=default_token_generator,
         success_url=settings.LOGIN_REDIRECT_URL),
         name='password_reset_confirm'),
     
