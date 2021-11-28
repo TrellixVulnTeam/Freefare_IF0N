@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'multiselectfield',
     'rest_framework',
     'escapejson',
+    "django_extensions",
 
 ]
 
@@ -64,6 +65,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Sal_website.urls'
+APPEND_SLASH = True
 
 TEMPLATES = [
     {
