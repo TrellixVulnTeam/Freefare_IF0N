@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'escapejson',
     "django_extensions",
-    "registration"
+    # "registration",
 
 ]
 
