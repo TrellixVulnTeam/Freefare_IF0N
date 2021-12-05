@@ -252,7 +252,7 @@
   });
 
   markers1 = JSON.parse('{{result|escapejson}}');
-  console.log(markers1)
+  // console.log(markers1)
   markerCount = markers1.length
 
   // Function to init map
@@ -411,7 +411,7 @@
             days = days + day +", "
         });
         
-        wholeAvail += "<p>"+ days + "&emsp;&emsp;" + timeFormatter(marker["availability_set"][j]['start_min']) +' - '+ timeFormatter(marker["availability_set"][j]['end_min']) +"</p>";
+        wholeAvail += "<p class='info-box-bold' style='margin:0;'>"+ days + "&emsp;&emsp;" + timeFormatter(marker["availability_set"][j]['start_min']) +' - '+ timeFormatter(marker["availability_set"][j]['end_min']) +"</p>";
       }
     }
 
@@ -423,12 +423,28 @@
     var title = marker["post_title"];
     var pos = new google.maps.LatLng(marker["post_lat"], marker["post_long"]);
 
-    var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 
-                  "<div class='row' style= 'display:flex; flex-direction:row; color:#342E37;'><image class='col' style= 'float: none; max-width: 30%; max-height: 30%; margin-left:auto; margin-right:0; max-width:40%; ' src="+thumbnail+" >" +
-                  "<div class='col' style='float:none; margin-top:auto; margin-bottom:auto; margin-left:0; margin-right:auto; max-width:49%'> <div id='date-time' style='font-size: 14px; font-weight:bold; color:#342E37;' >"+
-                  "Availability: "+ wholeAvail +"</div>" + "<p style='font-size: 16px; color:#342E37;'>" + marker["post_desc"] + "</p>"+
-                  "<br><strong ><a style=':blue' href="+ marker["post_slug"] +" >Read More</a></strong></div></div>"+
-                  "<br><p class=center style='float:none;'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
+    var content = "<div class=infowindow style='width:min-content;'>"+
+                  "<div class='info-image'>"+
+                  "<image src="+thumbnail+" ></div>"+
+
+                  "<div class='row' style= 'max-width:340px; min-width:300px; margin-top: 20px; display:flex; flex-direction:row; color:#342E37;'>" + 
+                  "<div style='margin:auto;'>"+
+                  "<h5 class='info-box-bold' style='text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;c'>" + title + "</h5>" +
+                  "<div class='info-box-bold' id='date-time' style='font-size: 16px;' >"+ wholeAvail +"</div>" + 
+                  "<p class='info-box' style='font-size: 14px;'>" + marker["post_desc"] + "</p>"+
+                  "<br>"+
+                
+                  "<a class='info-box' href="+ marker["post_slug"] +" >Read More</a></div></div>"+
+                  "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
+
+                  // var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 
+                  // "<div class='row' style= 'display:flex; flex-direction:row; color:#342E37;'><image class='col' style= 'float: none; max-width: 30%; max-height: 30%; margin-left:auto; margin-right:0; max-width:40%; ' src="+thumbnail+" >" +
+                  // "<div class='col' style='float:none; margin-top:auto; margin-bottom:auto; margin-left:0; margin-right:auto; max-width:49%'> <div id='date-time' style='font-size: 14px; font-weight:bold; color:#342E37;' >"+
+                  // "Availability: "+ wholeAvail +"</div>" + "<p style='font-size: 16px; color:#342E37;'>" + marker["post_desc"] + "</p>"+
+                  // "<br><strong ><a style=':blue' href="+ marker["post_slug"] +" >Read More</a></strong></div></div>"+
+                  // "<br><p class=center style='float:none;'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
+
+
 
     //get array of markers (wish this was just the ones currently in cluster)
     var allMarkers = gmarkers1;
@@ -473,7 +489,7 @@
     // Marker click listener
     google.maps.event.addListener(marker1, 'click', (function (marker1, content) {
       return function () {
-        console.log('Gmarker 1 gets pushed');
+        // console.log('Gmarker 1 gets pushed');
         infowindow.setContent(content);
         infowindow.open(map, marker1);
         // infowindow.close();
