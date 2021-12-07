@@ -6,17 +6,12 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.core.validators import RegexValidator
 from .validators import validate_is_pic
-from address.models import AddressField
-# import django_address.models 
-# from django_address.models import AddressField
-import urllib
 import requests 
 from django.template.defaultfilters import slugify 
-# from django_google_maps import fields as map_fields
 import recurrence.fields
 from multiselectfield import MultiSelectField
 from django.conf import settings
-import datetime, time
+import datetime
 from django.utils.crypto import get_random_string
 from better_profanity import profanity
 
@@ -168,19 +163,19 @@ class Profile(models.Model):
             self.org_state + " " + self.org_zipcode + " " + self.org_country
         return fulladdress
 
-    def createProfile(sender, **kwargs):
-        if kwargs['created']:
-            user_profile = UserProfile.objects.created(user=kwargs['instance'])
-        post_save.connect(createProfile, sender=User)
+    # def createProfile(sender, **kwargs):
+    #     if kwargs['created']:
+    #         user_profile = UserProfile.objects.created(user=kwargs['instance'])
+    #     post_save.connect(createProfile, sender=User)
 
     def slug_save(self):
         """ A function to generate a 5 character slug and see if it has been used and contains naughty words."""
         if not self.profile_slug: # if there isn't a slug
-            self.profile_slug = slugify(self.post_title)+ '-' + get_random_string(5) # create one
+            self.profile_slug = slugify(self.org_name)+ '-' + get_random_string(5) # create one
             slug_is_wrong = True  
             while slug_is_wrong: # keep checking until we have a valid slug
                 slug_is_wrong = False
-                other_objs_with_slug = UserPost.objects.filter(profile_slug=self.profile_slug)
+                other_objs_with_slug = Profile.objects.filter(profile_slug=self.profile_slug)
                 if len(other_objs_with_slug) > 0:
                     # if any other objects have current slug
                     slug_is_wrong = True
