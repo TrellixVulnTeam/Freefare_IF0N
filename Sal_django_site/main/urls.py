@@ -46,8 +46,10 @@ urlpatterns = [
     path('my-account', views.my_account, name='my_account'),
 
     path('contact', contactView, name='contact'),
+    path('contact/', contactView, name='contact'),
     path('success', successView, name='success'),
     path('volunteer', volunteerView, name='volunteer'),
+    path('volunteer/', volunteerView, name='volunteer'),
     
 
     path('confirm-email/<str:user_id>/<str:token>/', views.ConfirmRegistrationView.as_view(), name='confirm_email'),

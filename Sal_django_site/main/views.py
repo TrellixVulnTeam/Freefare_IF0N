@@ -41,6 +41,8 @@ def volunteerView(request):
                   template_name="main/volunteer.html")
     
 def contactView(request):
+    print("--- test ---")
+    print(request)
     if request.method == 'GET':
         post_id = request.GET.get('post_id')
         form = ContactForm()

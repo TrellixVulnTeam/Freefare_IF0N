@@ -66,7 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Sal_website.urls'
-APPEND_SLASH = True
+APPEND_SLASH = False
+TRAILING_SLASH = False
 
 TEMPLATES = [
     {
