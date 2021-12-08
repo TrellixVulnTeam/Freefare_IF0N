@@ -28,7 +28,8 @@ DAYS_OF_WEEK= [
 ROLE_CHOICES = [
         ('Donor', 'DONOR'),
         ('Recipient', 'RECIPIENT'),
-        ('Both', 'BOTH'),]
+        ('Both', 'BOTH'),
+        ]
         
 class InfoPrompt(models.Model):
     org_name = models.CharField(max_length=200)
