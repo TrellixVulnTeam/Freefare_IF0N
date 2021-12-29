@@ -58,16 +58,17 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'Sal_website.urls'
-APPEND_SLASH = False
+
+APPEND_SLASH =  True
 TRAILING_SLASH = False
+ROOT_URLCONF = 'Sal_website.urls'
 
 TEMPLATES = [
     {
@@ -173,10 +174,10 @@ AUTHENTICATION_BACKENDS = [
 
 # Defining Soc_auth characteristics
 # https://www.digitalocean.com/community/tutorials/django-authentication-with-facebook-instagram-and-linkedin
-LOGIN_URL = 'login'
+LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_URL = '/logout'
+LOGOUT_REDIRECT_URL = '/login'
 
 # [...]
 
