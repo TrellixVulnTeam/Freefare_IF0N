@@ -114,7 +114,7 @@
 
   </div>
   <div class="center">
-    <a id="cannot" class="btn-small center-align" href="contact">Can't find what you're looking for?</a>
+    <a id="cannot" class="btn-small center-align" href="{% url 'contact' %}">Can't find what you're looking for?</a>
   </div>
   <br></br>
 
@@ -434,7 +434,7 @@
                   "<p class='info-box' style='font-size: 14px;'>" + marker["post_desc"] + "</p>"+
                   "<br>"+
                 
-                  "<a class='info-box' href="+ marker["post_slug"] +" >Read More</a></div></div>"+
+                  "<a class='info-box' href=/"+ marker["post_slug"] +" >Read More</a></div></div>"+
                   "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
 
                   // var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 

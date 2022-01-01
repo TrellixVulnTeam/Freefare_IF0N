@@ -156,7 +156,7 @@ class ConfirmRegistrationView(View):
             context['message'] = 'Registration complete. Please login'
 
         messages.success(request, f"Your account has been registered")
-        return redirect('/login')
+        return redirect('login')
 
 def account_activation_sent(request):
     return render(request=request,
@@ -207,7 +207,7 @@ def profile_view(request):
         return render(request=request, template_name="main/profile_view.html")
     else:
         messages.info(request, f"Login to view your profile")
-        return redirect('/login')
+        return redirect('login')
 
 @login_required
 def profile_edit(request):
@@ -438,7 +438,7 @@ def my_posts(request):
                                                                "my_posts" : my_posts})
     else:
         messages.info(request, f"Login to view your posts")
-        return HttpResponseRedirect('login')
+        return HttpResponseRedirect('/login')
     return render(request=request, template_name="main/my_posts.html")
 
 def single_slug(request, single_slug):
