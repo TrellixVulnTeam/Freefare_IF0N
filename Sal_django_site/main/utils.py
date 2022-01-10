@@ -12,7 +12,9 @@ def cleanup_social_account(backend, uid, user=None, *args, **kwargs):
 
     # Check if the user object exists and a new account was just created.
     if user and kwargs.get('is_new', False):
-        user.your_name = kwargs['details']['first_name']
+        first_name = kwargs['details']['first_name']
+        last_name = kwargs['details']['last_name']
+        user.your_name = first_name + " " + last_name
         user.is_staff = False
         user.is_superuser = False
         user.save()
