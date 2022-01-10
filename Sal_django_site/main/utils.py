@@ -1,12 +1,6 @@
 from .models import Profile
 
-def create_profile(user, **kwargs):
-    if Profile.objects.filter(user=user).exists():
-        pass
-    else:
-        new_profile = Profile(user=user)
-        new_profile.save()
-    return kwargs
+
 
 def cleanup_social_account(backend, uid, user=None, *args, **kwargs):
     """
@@ -26,3 +20,10 @@ def cleanup_social_account(backend, uid, user=None, *args, **kwargs):
     return {'user': user}
 
 
+def create_profile(user, **kwargs):
+    if Profile.objects.filter(user=user).exists():
+        pass
+    else:
+        new_profile = Profile(user=user)
+        new_profile.save()
+    return kwargs
