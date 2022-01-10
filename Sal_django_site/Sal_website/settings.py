@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
-    'social_django',
     'materializecssform',
     'widget_tweaks',
     'address',
@@ -50,7 +49,12 @@ INSTALLED_APPS = [
     'multiselectfield',
     'rest_framework',
     'escapejson',
-    "django_extensions",
+    'django_extensions',
+    'oauth2_provider',
+    'social_django',
+    # 'social_django_mongoengine',
+    'drf_social_oauth2',
+    'corsheaders',
     # "registration",
 
 ]
@@ -63,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -164,13 +169,22 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.google.GoogleOAuth',
-    # 'social_core.backends.twitter.TwitterOAuth',
-    # 'social_core.backends.yahoo.YahooOpenId',
+    'social_core.backends.facebook.FacebookAppOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
-    # 'social_core.backends.linkedin.LinkedinOAuth2',
+    'drf_social_oauth2.backends.DjangoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  
+       'drf_social_oauth2.authentication.SocialAuthentication',
+   )
+}
+CORS_ALLOWED_ORIGINS = [
+   "http://localhost:3000",
+   "http://127.0.0.1:3000"
+]
 
 # Defining Soc_auth characteristics
 # https://www.digitalocean.com/community/tutorials/django-authentication-with-facebook-instagram-and-linkedin
@@ -182,47 +196,57 @@ LOGOUT_REDIRECT_URL = '/login'
 # [...]
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
+# SOCIAL_AUTH_STORAGE = 'social_django_mongoengine.models.DjangoStorage'
 # [...]
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')      # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET') # App Secret
-# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email'] 
-# SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       
-#   'fields': 'id, name, email, picture.type(large), link'
-# }
+
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       
   'fields': 'id, name, email'
 }
-
+SOCIAL_AUTH_USER_FIELDS=['email','password','your_name',]
 SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 
     ('name', 'name'),
     ('email', 'email'),
-    # ('picture', 'picture'),
-    # ('link', 'profile_url'),
 ]
 
+# SOCIAL_AUTH_PIPELINE = (
+#     'social_core.pipeline.social_auth.social_details',
+#     'social_core.pipeline.social_auth.social_uid',
+#     'social_core.pipeline.social_auth.auth_allowed',
+#     'social_core.pipeline.social_auth.social_user',
+#     'social_core.pipeline.user.get_username',
+#     'social_core.pipeline.user.create_user',
+#     # 'main.utils.cleanup_social_account',
+#     'social_core.pipeline.social_auth.associate_user',
+#     'social_core.pipeline.social_auth.load_extra_data',
+#     'social_core.pipeline.user.user_details',
+#     # 'main.utils.create_profile'  #Custom pipeline
+# )
 
 # [...]
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY') #client id
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET') #client password
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email']
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email']
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+   'https://www.googleapis.com/auth/userinfo.email',
+   'https://www.googleapis.com/auth/userinfo.profile',
+]
 # [...]
 # TAKENOTE this library is for fromatting forms. might be useful editing the profiles 'materializecssform'
 #https://pypi.org/project/django-materializecss-form/
+
+
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-# INSTALLED_APPS = (
-#      'materializecssform',
-#      ...
-#      )
 
 # [...]
 # The following is for developing our email backend

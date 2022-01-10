@@ -43,7 +43,7 @@ class InfoPrompt(models.Model):
 class CustomUserManager(BaseUserManager):
 
     def _create_user(self, email, password,
-                     is_staff, is_superuser, **extra_fields):
+                     is_staff, is_superuser, your_name, **extra_fields):
         """
         Creates and saves a User with the given email and password.
         """
@@ -51,7 +51,8 @@ class CustomUserManager(BaseUserManager):
         if not email:
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
-        user = self.model(email=email,
+        your_name = self.normalize_email(your_name)
+        user = self.model(email=email, your_name=your_name,
                           is_staff=is_staff, is_active=True,
                           is_superuser=is_superuser, last_login=now,
                           date_joined=now, **extra_fields)
@@ -59,12 +60,12 @@ class CustomUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_user(self, email, password=None, **extra_fields):
-        return self._create_user(email, password, False, False,
+    def create_user(self, email, your_name, password=None, **extra_fields):
+        return self._create_user(email, password, your_name, False, False, 
                                  **extra_fields)
 
-    def create_superuser(self, email, password, **extra_fields):
-        return self._create_user(email, password, True, True,
+    def create_superuser(self, email, your_name, password, **extra_fields):
+        return self._create_user(email, password, your_name, True, True, 
                                  **extra_fields)
 
 
@@ -77,7 +78,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     """
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     your_name = models.CharField(_('user name'), max_length=30, blank=True)
-    is_staff = models.BooleanField(_('staff status'), default=False,
+    is_staff = models.BooleanField(_('staff status'), default=False, null=True,
                                    help_text=_('Designates whether the user can log into this admin '
                                                'site.'))
     is_active = models.BooleanField(_('active'), default=True,
