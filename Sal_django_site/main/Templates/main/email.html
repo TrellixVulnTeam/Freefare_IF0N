@@ -50,20 +50,20 @@ form{
 </style>
 
 <body>
-  <div class="container col " style="margin-bottom: 12em;">
-    <div class="card hoverable">
-      <div class="title-banner">
-        <h3 class="title-text";> Contact Form</h3>
-      </div>
+  <div class="container col " style="margin-bottom: 8em;">
+    {% comment %} <div class="card hoverable"> {% endcomment %}
+      {% comment %} <div class="title-banner"> {% endcomment %}
+        <h3 class="title-text"; style="color: #147358ff; font-size: 40pt">Contact Form</h3>
+      {% comment %} </div> {% endcomment %}
 
-      <form method="post" style="font-size:14pt;">
+      <form method="post" style="font-size:15pt;">
          {% csrf_token %}
          {{ form.as_p }}
          <div class="form-actions center-align" style="padding: 10pt;">
-            <button class="search-button" type="submit" value="Submit" style="color: grey; background-color: white; padding: 5pt; width: 80pt; height: 40pt; border: 1.5pt solid black; border-radius: 5pt; font-size:20pt;"><span>Send</span></button>
+            <button class="search-button" type="submit" value="Submit" style="color: #f25e5eff; background-color: transparent; border-color: #f25e5eff; border: 4pt solid #f25e5eff; padding: 5pt; width: 100pt; height: 100pt; border-radius: 50pt; font-size:20pt;"><span>Send</span></button>
          </div>
       </form>
-    </div>
+    {% comment %} </div> #f25e5eff {% endcomment %}
   </div>
 
   {% include 'main/footer.html' %}
