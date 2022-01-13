@@ -87,7 +87,7 @@ body{
   position: relative;
   display:block;
   background-image:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('images/map-side.jpg');
-  background-color: #f2f2f2ff;
+  background-color: #f2f2f2ff; 
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;

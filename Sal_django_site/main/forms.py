@@ -200,7 +200,7 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ("email",)
+        fields = ("email","your_name")
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
