@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Profile, UserPost, Availability, DonorPost, RecipientPost
 from .models import DAYS_OF_WEEK
 # from address.forms import AddressField, AddressWidget
-import django.contrib.admin.widgets
+# import django.contrib.admin.widgets
 from django.utils.html import escape
 from django.forms.widgets import SelectDateWidget, DateTimeInput
 from django.forms import inlineformset_factory
@@ -15,6 +15,7 @@ from django.forms import ModelForm
 
 class ContactForm(forms.Form):
     from_email = forms.EmailField(required=True)
+    name = forms.CharField(required=True)
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
@@ -200,7 +201,7 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ("email","your_name")
+        fields = ("your_name",)
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")

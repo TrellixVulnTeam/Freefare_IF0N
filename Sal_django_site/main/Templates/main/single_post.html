@@ -1,15 +1,11 @@
 {% extends 'main/header.html' %}
-
+{% load static %}
 {% block content %}
 
 <head>
-    {% load static %}
     <title> Post - Freefare</title>
 </head>
 <style>
-    /* body {
-        background-color: ghostwhite;
-    } */
 
     .mega-container {
         margin-top: 3em;
@@ -48,6 +44,7 @@
     .p-line {
         text-align: left;
         padding-bottom: 4%;
+        margin-top: 0;
         /* background-color:#F2F2F2; */
     }
 
@@ -63,16 +60,25 @@
     p.col {
         margin-bottom: 0;
         margin-top: 0;
+        padding: 0 0.15rem;
     }
-
 
     .post-image {
         margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
+        margin-right: 24px;
+        margin-top: 0;
         margin-bottom: auto;
         /* max-width: 60%;
         max-height: 60%; */
+    }
+
+    strong{
+    font-size: 20px;
+    }
+
+    .time-row{
+        font-family: 'metropolismedium', Arial, sans-serif;
+
     }
 
     @media screen and (min-width: 621px) {
@@ -104,37 +110,36 @@
                 <div class="col right-col">
                     <div class="post-content">
                         <strong class="p-line">by {{single_post.post_org_name}}</strong>
-                        <div></Strong>
-                            {% for availability in post.availability_set.all %}
-                            <strong>
-                                <p class="times">{{availability.post_day}}&emsp;
-                                    {{availability.start_hour}}&nbsp;-&nbsp;{{availability.end_hour}}
-                                </p>
-                            </strong>
-                            {% endfor %}
-                        </div>
+
+
                         <!-- <p class="p-line">Possible Deliver/Pickup: {{single_post.post_deliver}}</p> -->
 
 
-                        <p class="p-line">{{single_post.post_desc}}</p>
+                        <p class="p-line">
+                            <span class="time-row">{% for availability in single_post.availability_set.all %}
+                                    {{availability.post_day}}&emsp;
+                                    {{availability.start_hour}}&nbsp;-&nbsp;{{availability.end_hour}}
+                                {% endfor %}
+                            </span>
+                            <br>{{single_post.post_desc}}
+                        </p>
 
                         <strong>Contact Info</strong>
-                        <p>{{single_post.post_org_phone}}</p>
-                        <p>{{single_post.post_org_email}}</p>
-                        <p>{{single_post.post_org_address}}</p>
-                        <div class="row">
-                            <p class="col">{{single_post.post_org_city}}</p>
-                            <p class="col">{{single_post.post_org_state}}</p>
-                            <p class="col">{{single_post.post_org_zipcode}}</p>
-                        </div>
+
+                        <p class="p-line">{{single_post.post_org_address}} <br> {{single_post.post_org_city}}, {{single_post.post_org_state}} {{single_post.post_org_zipcode}}
+                        <br>{{single_post.post_org_phone}} &ensp; {{single_post.post_org_email}}
+                        <br>
                         {% if single_post.post_deliver is True %}
-                        <p class="p-line">Possible Deliver/Pickup: Yes</p>
+                            Possible Deliver/Pickup: <b>Yes</b>
                         {% endif %}
                         {% if single_post.post_deliver is False %}
-                        <p class="p-line">Possible Deliver/Pickup: No</p>
+                            Possible Deliver/Pickup: <b>No</b>
                         {% endif %}
+                        </p>
 
-                        <p class="p-line"><a href="/{{single_post.post_creator.profile.profile_slug}}">About this
+
+
+                        <p class="p-line"><a href="/{{single_post.post_creator.profile.profile_slug}}">More about this
                                 Organization</a></p>
                     </div>
                 </div>

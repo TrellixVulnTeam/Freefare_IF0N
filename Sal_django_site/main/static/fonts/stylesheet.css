@@ -241,13 +241,14 @@ h1, h2, h3 {
 
 
 
-    /* p {
+    p {
     font-family: 'metropolisregular', Arial, sans-serif;
     font-weight:normal;
     font-style:normal;
+    letter-spacing: .015rem;
     color: #2a2d34ff;
 
-  } */
+  }
 
 
     a{

@@ -40,6 +40,16 @@
   right: 0;
 }
 
+
+.contact-us {
+  background: #fafafa;
+}
+
+.contact-us-textarea {
+    min-height: 188px;
+    max-width: 100%;
+}
+
 form{
   padding-left: 4%;
   padding-right: 4%;
@@ -56,13 +66,41 @@ form{
         <h3 class="title-text"; style="color: #147358ff; font-size: 40pt">Contact Form</h3>
       {% comment %} </div> {% endcomment %}
 
-      <form method="post" style="font-size:15pt;">
-         {% csrf_token %}
-         {{ form.as_p }}
+      <form method="post" class="mb-4 mb-lg-0" style="font-size:15pt;">
+        {% csrf_token %}
+        {% load widget_tweaks %}
+        {{  form.media }}
+        {{  form.source }}
+        <div class="row">
+          <div class="col">
+            <div class="form-row">
+              <label for="name">Your name</label>
+              {{  form.name |add_class:"contact-us col-md-6" }}
+            </div>
+            <div class="form-row">
+              <label for="from_email">Your email</label>
+              {{  form.from_email |add_class:"contact-us col-md-6" }}
+            </div>
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              {{  form.subject |add_class:"contact-us" }}
+            </div>
+          </div>
+          <div class="col">
+            <div class="">
+              <label for="message">Message</label>
+              {{  form.message |add_class:"contact-us contact-us-textarea" }}
+            </div>
+          </div>
+        </div>
+        
+
+
          <div class="form-actions center-align" style="padding: 10pt;">
             <button class="search-button" type="submit" value="Submit" style="color: #f25e5eff; background-color: transparent; border-color: #f25e5eff; border: 4pt solid #f25e5eff; padding: 5pt; width: 100pt; height: 100pt; border-radius: 50pt; font-size:20pt;"><span>Send</span></button>
          </div>
       </form>
+
     {% comment %} </div> #f25e5eff {% endcomment %}
   </div>
 
