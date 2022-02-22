@@ -5,7 +5,7 @@ body {
 .input-field {
   margin-left: 0;
   margin-right: 0;
-  padding: 5px;
+  padding: 5pt;
   width: 94%;
 }
 
@@ -268,9 +268,9 @@ label {
 
 .gm-style .gm-style-iw-c {
     padding-top: 0px;
-    padding-right: 12px;
-    padding-bottom: 12px;
-    padding-left: 0px;
+    padding-right: 12pt;
+    padding-bottom: 12pt;
+    padding-left: 0pt;
 
 }
 
@@ -281,24 +281,25 @@ label {
 
 .info-box-bold {
   font-family: "metropolismedium", Arial, sans-serif;
-  font-size: 15px;
+  font-size: 3vw;
 }
 
 .info-box {
   font-family: "metropolisregular_italic", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 10pt;
   /* font-style: oblique; */
   /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
 }
 
 .read-more {
   font-family: "metropolismedium", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 10pt;
 }
 
 .info-image {
+  /* max-width: 100%; */
   position: relative;
-  height: 150px;
+  height: 20pt;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -307,6 +308,7 @@ label {
 }
 
 .info-image img {
+  /* max-width: 100%; */
   width: 100%;
   position: absolute;
   top: 50%;
