@@ -14,7 +14,8 @@
     <section class="Donation">
       <div>
         <div id="donate-col" class="col s14 m6">
-          <div class="card hoverable scroll-box">
+          <button type="button" class="collapsible"><h2 class="center-align filter-button-text" style="color:#3C91E6" >Filters</h2></button>
+          <div class="card content hoverable scroll-box">
             <h2 class="filter-title center-align" style="color:#3C91E6" >Filters</h2>
             <div class="card-content">
               <p class="search-location filter-label center-align">Location</p>
@@ -26,7 +27,7 @@
 
               <br>
               <form action="#">
-                <p class="time-range filter-label center-align  ">Donors or Recipients?</p>
+                <p class="time-range filter-label center-align ">Donors or Recipients?</p>
                 <br>
                 <p>
                   <label>
@@ -264,6 +265,7 @@
       zoom: 9,
       center: center,
       mapTypeId: google.maps.MapTypeId.TERRAIN,
+      gestureHandling: "greedy",
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -630,5 +632,21 @@
   // google.maps.event.addDomListener(window, "load", initialize);
 </script>
 
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
 
 {% endblock %}

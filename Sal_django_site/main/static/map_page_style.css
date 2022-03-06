@@ -1,6 +1,10 @@
 body {
   background-color: ghostwhite;
 }
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  display: none;
+}
 
 .input-field {
   margin-left: 0;
@@ -84,14 +88,49 @@ label {
   .card {
     max-width: 250pt;
     float: left;
+    display: flex;
   }
 }
 
 @media screen and (max-width: 655px) {
+  /* Style the button that is used to open and close the collapsible content */
+  .collapsible {
+    display: block;
+    background-color: white;
+    cursor: pointer;
+    padding: 2px;
+    width: 100%;
+    border: none;
+    outline: none;
+    /* font-size: 15px; */
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .collapsible:active,
+  .collapsible:hover {
+    background-color: white;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    /* padding: 0 18px; */
+    /* overflow: hidden; */
+    display: none;
+  }
+
   .Donation {
     order: 2;
     max-width: 100%;
   }
+
+  .filter-button-text{
+    margin-top: 15px;
+  }
+
+  .filter-title{
+    display: none;
+  }
+
 
   .Map {
     order: 1;
@@ -111,14 +150,15 @@ label {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 800;
+    height: 860;
   }
 
-  .scroll-box {
+
+  /* .scroll-box {
     overflow-y: scroll;
     height: 200px;
     padding: 1rem;
-  }
+  } */
 
   #donate-col {
     width: 100%;
@@ -259,6 +299,7 @@ label {
 }
 
 .infowindow {
+<<<<<<< HEAD
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 
@@ -277,11 +318,25 @@ label {
     padding-bottom: 12pt;
     padding-left: 0pt;
 
+=======
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.gm-style .gm-style-iw-c {
+  padding-top: 0px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-left: 0px;
+>>>>>>> 0bde079341fd8a6271f12a072fb9056d8bc5d728
 }
 
 .info-box-title {
   font-family: "metropolissemi_bold", Arial, sans-serif;
-
 }
 
 .info-box-bold {
@@ -326,7 +381,7 @@ label {
 }
 
 .gm-ui-hover-effect button {
-  opacity: .6;
+  opacity: 0.6;
   background: #f9fbfa;
 }
 
