@@ -16,7 +16,6 @@ from django.forms import ModelForm
 class ContactForm(forms.Form):
     from_email = forms.EmailField(required=True)
     name = forms.CharField(required=True)
-    subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
 

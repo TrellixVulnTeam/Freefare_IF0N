@@ -69,6 +69,13 @@ label {
     max-width: 50%;
   }
 
+  .content {
+    /* padding: 0 18px; */
+    /* overflow: hidden; */
+    display: block !important;
+
+  }
+
   .Map {
     float: left;
     padding-left: 20pt;
@@ -122,6 +129,10 @@ label {
     max-width: 100%;
   }
 
+  .expand_icon{
+    float: top;
+  }
+
   .filter-button-text{
     margin-top: 15px;
   }
@@ -129,7 +140,14 @@ label {
   .filter-title{
     display: none;
   }
+  
+  .gm-style-iw{
+    max-height: 236px !important;
+  }
 
+  .gm-style-iw-d{
+    max-height: 236px !important;
+  }
 
   .Map {
     order: 1;
@@ -138,6 +156,8 @@ label {
     width: 100%;
     z-index: 0;
   }
+
+
 
   #map {
     margin: auto;
@@ -300,6 +320,8 @@ label {
 .infowindow {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  width: min-content;
+  min-height: 300;
 }
 
 ::-webkit-scrollbar {

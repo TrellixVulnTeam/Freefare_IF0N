@@ -101,6 +101,7 @@ body{
 
 input {
   text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .search-area {
@@ -226,7 +227,9 @@ input {
 }
 
 #place{
-  width: 94%;
+  /* width: max-content; */
+  max-width: 94%;
+  box-sizing: border-box;
 }
 
 
@@ -259,6 +262,11 @@ input {
     border-bottom-left-radius: 10pt;
     border-bottom-right-radius: 10pt;
   }
+
+  #place{
+    width: 80%;
+  }
+
 }
 
 @media screen and (max-width: 520px) {

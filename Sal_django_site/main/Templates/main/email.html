@@ -9,10 +9,25 @@
 </head>
 
 <style>
+
+.search-button.visited, .search-button.active {
+    background-color: none;
+  }
+
 .search-button {
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin-top: 2.4rem;
+  color: #f25e5eff; 
+  background-color: transparent;
+  border-color: #f25e5eff;
+  border: 4pt solid #f25e5eff; 
+  padding: 5pt; 
+  width: 90pt; 
+  height: 40pt; 
+  border-radius: 12pt; 
+  font-size:20px;
+  
 }
 
 .search-button span {
@@ -40,14 +55,31 @@
   right: 0;
 }
 
-
 .contact-us {
   background: #fafafa;
+  font-size: 12px;
+  height: 36px;
 }
 
 .contact-us-textarea {
     min-height: 188px;
     max-width: 100%;
+}
+
+.form-row{
+  margin-bottom: 2.4rem;
+}
+
+
+#speech-img {
+  width: 75%;
+  margin-left: 5%;
+}
+
+.title-type{
+  color: #147358ff; 
+  font-size: 40pt;
+  margin-top: 8%;
 }
 
 form{
@@ -57,13 +89,52 @@ form{
   padding-top: 2%;
 }
 
+label{
+  font-size: 12px;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    background-color: transparent;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 1.8rem;
+    width: 100%;
+    font-size: 14px;
+
+}
+
+@media screen and (min-width: 621px) {
+  .row{ 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  #speech-img {
+    margin-top: 2rem;
+    margin-left: 0px;
+  }
+
+  h3{
+    padding: 0.75rem 0.75rem;
+
+  }
+
+  div.container.col{
+    align-items: center;
+    align-content: center;
+  }
+}
 </style>
 
 <body>
   <div class="container col " style="margin-bottom: 8em;">
     {% comment %} <div class="card hoverable"> {% endcomment %}
       {% comment %} <div class="title-banner"> {% endcomment %}
-        <h3 class="title-text"; style="color: #147358ff; font-size: 40pt">Contact Form</h3>
+        <h3 class="title-type">Contact Form</h3>
       {% comment %} </div> {% endcomment %}
 
       <form method="post" class="mb-4 mb-lg-0" style="font-size:15pt;">
@@ -74,31 +145,29 @@ form{
         <div class="row">
           <div class="col">
             <div class="form-row">
-              <label for="name" style="font-size: 12pt">Your name</label>
+              <label for="name">Your name</label>
               {{  form.name |add_class:"contact-us col-md-6" }}
             </div>
             <div class="form-row">
-              <label for="from_email" style="font-size: 12pt">Your email</label>
+              <label for="from_email">Your email address</label>
               {{  form.from_email |add_class:"contact-us col-md-6" }}
             </div>
-            <div class="form-row">
-              <label for="subject" style="font-size: 12pt">Subject</label>
-              {{  form.subject |add_class:"contact-us" }}
-            </div>
-          </div>
-          <div class="col">
-            <div class="">
-              <label for="message" style="font-size: 14pt">Message</label>
+            <div>
+              <label for="message">Message</label>
               {{  form.message |add_class:"contact-us contact-us-textarea" }}
             </div>
+            <div class="form-actions">
+              <button class="search-button" type="submit" value="Submit" >
+                <span>Send</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col">
+              <img id="speech-img" src="{% static 'images/icons8-speech-bubble-480.png' %}">
           </div>
         </div>
-        
 
-
-         <div class="form-actions center-align" style="padding: 10pt;">
-            <button class="search-button" type="submit" value="Submit" style="color: #f25e5eff; background-color: transparent; border-color: #f25e5eff; border: 4pt solid #f25e5eff; padding: 5pt; width: 120pt; height: 60pt; border-radius: 12pt; font-size:24pt;"><span>Send</span></button>
-         </div>
       </form>
 
     {% comment %} </div> #f25e5eff {% endcomment %}
