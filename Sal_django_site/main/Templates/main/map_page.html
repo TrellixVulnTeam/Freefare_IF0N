@@ -1,11 +1,14 @@
 {% extends 'main/header.html' %}
 
 {% block content %}
+
 <head>
   {% load static %}
   {% load escapejson %}
   <title>Surplus Map - Freefare</title>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+  <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'map_page_style.css' %}">
 </head>
 
@@ -15,20 +18,20 @@
       <div>
         <div id="donate-col" class="col s14 m6">
           <button type="button" class="collapsible">
-            <h2 class="center-align filter-button-text" style="color:#3C91E6" >Filters              
+            <h2 class="center-align filter-button-text" style="color:#3C91E6">Filters
               <span id="expand_icon" class="material-icons">
                 expand_more
               </span>
             </h2>
           </button>
           <div class="card content hoverable scroll-box">
-            
+
             <div class="card-content">
 
-              <h2 class="filter-title center-align" style="color:#3C91E6" >Filters
-                
+              <h2 class="filter-title center-align" style="color:#3C91E6">Filters
+
               </h2>
-              
+
               <p class="search-location filter-label center-align">Location</p>
               <div class="input-field">
                 <input id="search" type="search" required="" class="pac-target-input" placeholder="Where to look"
@@ -68,15 +71,16 @@
                 </p>
               </form>
               <br>
-              <div class="time-picker">
+              <div class="time-picker center-align">
                 <p class="time-picker-header filter-label center-align  ">Time(s) Available</p>
                 <div id="time-range">
-                  <p>Availability Range: <span class="slider-time">05:00 AM</span> - <span class="slider-time2">08:00
+                  <p class="center-align">Availability Range: <br> <span id="leftvalue">05:00 AM</span> - <span id="rightvalue">08:00
                       PM</span>
                   </p>
-                  <div class="sliders_step1">
-                    <div id="slider-range"></div>
+                  <div class="slider-area">
+                    <div class="slider-styled" id="slider"></div>
                   </div>
+
                 </div>
               </div>
               <br><br>
@@ -92,8 +96,8 @@
                       onchange="filterMarkers(this);"><span>Monday</span></label></p>
                 <p><label><input value="3" type="checkbox" id="tu" class="day_of_week" onchange="updateView(this)"
                       onchange="filterMarkers(this);"><span>Tuesday</span></label></p>
-                <p><label><input value="4" type="checkbox" id="w" class="day_of_week"
-                      onchange="updateView(this)" onchange="filterMarkers(this);"><span>Wednesday</span></label></p>
+                <p><label><input value="4" type="checkbox" id="w" class="day_of_week" onchange="updateView(this)"
+                      onchange="filterMarkers(this);"><span>Wednesday</span></label></p>
                 <p><label><input value="5" type="checkbox" id="th" class="day_of_week" onchange="updateView(this)"
                       onchange="filterMarkers(this);"><span>Thursday</span></label></p>
                 <p><label><input value="6" type="checkbox" id="f" class="day_of_week" onchange="updateView(this)"
@@ -101,27 +105,27 @@
                 <p><label><input value="7" type="checkbox" id="sa" class="day_of_week" onchange="updateView(this)"
                       onchange="filterMarkers(this);"><span>Saturday</span></label></p>
               </div>
-              
+
               <div><br>
 
                 <br>
-                
+
               </div>
-             
-              
-             
+
+
+
             </div>
-            
+
           </div>
         </div>
-       
+
       </div>
     </section>
 
     <!-- MAP -->
     <section class="Map ">
       <div id="map"></div>
-      
+
     </section>
 
   </div>
@@ -138,10 +142,9 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbMU1uNeRWo7V47J7Bz3WJSaLKQxz6DbE&libraries=places"></script>
 <script src="{% static 'google/markerclustererplus/dist/markerclustererplus.min.js' %}"></script>
 
+<!-- Session var for search -->
 <script>
-
   // Retrieve the sessionStorage variable and search
-
 
   var place = sessionStorage.getItem('place');
   // console.log(sessionStorage.getItem('place'));
@@ -158,7 +161,6 @@
       });
     });
   }
-
 </script>
 
 <script>
@@ -190,18 +192,56 @@
 
 </script>
 
+ 
 
+<!-- collapsible function -->
 <script>
-  //Slider UI and functionality 
-  $("#slider-range").slider({
-    range: true,
-    min: 0,
-    max: 1440,
-    step: 15,
-    values: [300, 1200],
-    slide: function (e, ui) {
-      var hours1 = Math.floor(ui.values[0] / 60);
-      var minutes1 = ui.values[0] - (hours1 * 60);
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+
+
+</script>
+
+<!-- Slider functionality -->
+<script>
+  var slider = document.getElementById("slider"),
+    leftValue = document.getElementById('leftvalue'),
+    rightValue = document.getElementById('rightvalue');
+
+  // 0 = initial minutes from start of day
+  // 1440 = maximum minutes in a day
+  // step: 30 = amount of minutes to step by. 
+  var initialStartMinute = 0,
+    initialEndMinute = 1440,
+    step = 15;
+
+  slider = noUiSlider.create(slider, {
+    start: [initialStartMinute, initialEndMinute],
+    connect: true,
+    step: step,
+    range: {
+      'min': initialStartMinute,
+      'max': initialEndMinute
+    }
+  });
+  var convertValuesToTime = function (values, handle) {
+
+    var hours1 = Math.floor(values[0] / 60);
+      var minutes1 = values[0] - (hours1 * 60);
 
       if (hours1.length == 1) hours1 = '0' + hours1;
       if (minutes1.length == 1) minutes1 = '0' + minutes1;
@@ -223,12 +263,11 @@
         minutes1 = minutes1;
       }
 
+      leftValue.innerHTML = hours1 + ':' + minutes1;
 
 
-      $('.slider-time').html(hours1 + ':' + minutes1);
-
-      var hours2 = Math.floor(ui.values[1] / 60);
-      var minutes2 = ui.values[1] - (hours2 * 60);
+      var hours2 = Math.floor(values[1] / 60);
+      var minutes2 = values[1] - (hours2 * 60);
 
       if (hours2.length == 1) hours2 = '0' + hours2;
       if (minutes2.length == 1) minutes2 = '0' + minutes2;
@@ -249,11 +288,17 @@
         minutes2 = minutes2 + " AM";
       }
 
-      $('.slider-time2').html(hours2 + ':' + minutes2);
-    }
+      rightValue.innerHTML = hours2 + ':' + minutes2;
+
+  };
+
+  slider.on('update', function (values, handle) {
+    convertValuesToTime(values, handle);
   });
+
 </script>
 
+<!-- Main map script -->
 <script>
 
   var gmarkers1 = [];
@@ -284,8 +329,8 @@
     for (i = 0; i < markerCount; i++) {
       addMarker(markers1[i]);
     }
-    
-    
+
+
     // Create the search box and link it to the UI element.
     const searchBox = new google.maps.places.SearchBox(document.getElementById('search'));
     // google.maps.event.addListener(searchBox, 'places_changed', processPlacesSearch);
@@ -325,15 +370,15 @@
           scaledSize: new google.maps.Size(25, 25)
         };
         // Create a marker for each place.
-        var marker =  new google.maps.Marker({
-            map,
-            icon,
-            title: place.name,
-            position: place.geometry.location
-          })
+        var marker = new google.maps.Marker({
+          map,
+          icon,
+          title: place.name,
+          position: place.geometry.location
+        })
 
         // markers.push(marker);
-        
+
         if (place.geometry.viewport) {
           // Only geocodes have viewport.
           bounds.union(place.geometry.viewport);
@@ -344,7 +389,7 @@
       map.fitBounds(bounds);
     });
 
-    google.maps.event.addListener(map, "click", function(event) {
+    google.maps.event.addListener(map, "click", function (event) {
       infowindow.close();
     });
 
@@ -359,7 +404,7 @@
     // });
 
     markerCluster = new MarkerClusterer(map, gmarkers1,
-      { maxZoom: 20, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' },);
+      { maxZoom: 20, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 
   }
 
@@ -373,93 +418,93 @@
     google.maps.event.trigger(this, 'focus', {});
 
   };
-  function timeFormatter(unformatted){
+  function timeFormatter(unformatted) {
     var hours1 = Math.floor(unformatted / 60);
-      var minutes1 = unformatted - (hours1 * 60);
-      if (hours1.length == 1) hours1 = '0' + hours1;
-      if (minutes1.length == 1) minutes1 = '0' + minutes1;
-      if (minutes1 == 0) minutes1 = '00';
-      if (hours1 >= 12) {
-        if (hours1 == 12) {
-          hours1 = hours1;
-          minutes1 = minutes1 + " PM";
-        } else {
-          hours1 = hours1 - 12;
-          minutes1 = minutes1 + " PM";
-        }
-      } else {
+    var minutes1 = unformatted - (hours1 * 60);
+    if (hours1.length == 1) hours1 = '0' + hours1;
+    if (minutes1.length == 1) minutes1 = '0' + minutes1;
+    if (minutes1 == 0) minutes1 = '00';
+    if (hours1 >= 12) {
+      if (hours1 == 12) {
         hours1 = hours1;
-        minutes1 = minutes1 + " AM";
+        minutes1 = minutes1 + " PM";
+      } else {
+        hours1 = hours1 - 12;
+        minutes1 = minutes1 + " PM";
       }
-      if (hours1 == 0) {
-        hours1 = 12;
-        minutes1 = minutes1;
-      }
-      return formatted = hours1 + ':' + minutes1
+    } else {
+      hours1 = hours1;
+      minutes1 = minutes1 + " AM";
+    }
+    if (hours1 == 0) {
+      hours1 = 12;
+      minutes1 = minutes1;
+    }
+    return formatted = hours1 + ':' + minutes1
   }
 
 
   // Function to add marker to map
   function addMarker(marker) {
-    
+
     // var category = marker[4];
     // var availability = marker[5];
     // var title = marker[1];
     // var pos = new google.maps.LatLng(marker[2], marker[3]);
     // var content = marker[1] + " " + marker [4];
-    var category = [marker["donor_or_recip"], marker["post_deliver"] ];
-    if(marker["donor_or_recip"]=='Both'){
+    var category = [marker["donor_or_recip"], marker["post_deliver"]];
+    if (marker["donor_or_recip"] == 'Both') {
       category.push('Donor')
       category.push('Recipient')
     }
-    if(marker["post_deliver"]==true){
+    if (marker["post_deliver"] == true) {
       category.push('deliverable')
     }
 
     var availability = [];
     var wholeAvail = '';
-    if( marker["availability_set"].length==0){
+    if (marker["availability_set"].length == 0) {
       var wholeAvail = 'Contact for Availabilities';
     } else {
       for (j = 0; j < marker["availability_set"].length; j++) {
         var days = " "
         marker["availability_set"][j]['post_day'].forEach(function (day, i) {
-            category.push(day)
-            days = days + day +", "
+          category.push(day)
+          days = days + day + ", "
         });
-        
-        wholeAvail += "<p class='info-box-bold' style='margin:0;'>"+ days + "&emsp;&emsp;" + timeFormatter(marker["availability_set"][j]['start_min']) +' - '+ timeFormatter(marker["availability_set"][j]['end_min']) +"</p>";
+
+        wholeAvail += "<p class='info-box-bold' style='margin:0;'>" + days + "&emsp;&emsp;" + timeFormatter(marker["availability_set"][j]['start_min']) + ' - ' + timeFormatter(marker["availability_set"][j]['end_min']) + "</p>";
       }
     }
 
-    for (j = 0; j < marker["availability_set"].length; j++){
-      availability.push([marker["availability_set"][j]["start_min"],marker["availability_set"][j]["end_min"]])
+    for (j = 0; j < marker["availability_set"].length; j++) {
+      availability.push([marker["availability_set"][j]["start_min"], marker["availability_set"][j]["end_min"]])
     }
-    
+
     var thumbnail = marker['post_image']
     var title = marker["post_title"];
     var pos = new google.maps.LatLng(marker["post_lat"], marker["post_long"]);
 
-    var content = "<div class=infowindow>"+
-                  "<div class='info-image'>"+
-                  "<image src="+thumbnail+" ></div>"+
+    var content = "<div class=infowindow>" +
+      "<div class='info-image'>" +
+      "<image src=" + thumbnail + " ></div>" +
 
-                  "<div class='row' style= 'max-width:340px; min-width:300px; margin-top: 20px; display:flex; flex-direction:row; color:#342E37;'>" + 
-                  "<div style='margin:auto; width: 260px;'>"+
-                  "<h6 class='info-box-title' style='font-size: 18px; text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;'>" + title + "</h6>" +
-                  "<div class='info-box-bold' id='date-time' >"+ wholeAvail +"</div>" + 
-                  "<p class='info-box'>" + marker["post_desc"] + "</p>"+
-                  "<br>"+
-                
-                  "<a class='read-more' href=/"+ marker["post_slug"] +" >Read More</a></div></div>"+
-                  "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
+      "<div class='row' style= 'max-width:340px; min-width:300px; margin-top: 20px; display:flex; flex-direction:row; color:#342E37;'>" +
+      "<div style='margin:auto; width: 260px;'>" +
+      "<h6 class='info-box-title' style='font-size: 18px; text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;'>" + title + "</h6>" +
+      "<div class='info-box-bold' id='date-time' >" + wholeAvail + "</div>" +
+      "<p class='info-box'>" + marker["post_desc"] + "</p>" +
+      "<br>" +
 
-                  // var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 
-                  // "<div class='row' style= 'display:flex; flex-direction:row; color:#342E37;'><image class='col' style= 'float: none; max-width: 30%; max-height: 30%; margin-left:auto; margin-right:0; max-width:40%; ' src="+thumbnail+" >" +
-                  // "<div class='col' style='float:none; margin-top:auto; margin-bottom:auto; margin-left:0; margin-right:auto; max-width:49%'> <div id='date-time' style='font-size: 14px; font-weight:bold; color:#342E37;' >"+
-                  // "Availability: "+ wholeAvail +"</div>" + "<p style='font-size: 16px; color:#342E37;'>" + marker["post_desc"] + "</p>"+
-                  // "<br><strong ><a style=':blue' href="+ marker["post_slug"] +" >Read More</a></strong></div></div>"+
-                  // "<br><p class=center style='float:none;'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
+      "<a class='read-more' href=/" + marker["post_slug"] + " >Read More</a></div></div>" +
+      "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id=" + marker["post_slug"] + "' >Report</a></p></div></div>";
+
+    // var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 
+    // "<div class='row' style= 'display:flex; flex-direction:row; color:#342E37;'><image class='col' style= 'float: none; max-width: 30%; max-height: 30%; margin-left:auto; margin-right:0; max-width:40%; ' src="+thumbnail+" >" +
+    // "<div class='col' style='float:none; margin-top:auto; margin-bottom:auto; margin-left:0; margin-right:auto; max-width:49%'> <div id='date-time' style='font-size: 14px; font-weight:bold; color:#342E37;' >"+
+    // "Availability: "+ wholeAvail +"</div>" + "<p style='font-size: 16px; color:#342E37;'>" + marker["post_desc"] + "</p>"+
+    // "<br><strong ><a style=':blue' href="+ marker["post_slug"] +" >Read More</a></strong></div></div>"+
+    // "<br><p class=center style='float:none;'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
 
 
 
@@ -471,18 +516,18 @@
 
     //check to see if any of the existing markers match the pos of the new marker
     if (allMarkers.length != 0) {
-        for (i=0; i < allMarkers.length; i++) {
-            var existingMarker = allMarkers[i];
-            var existingPos = existingMarker.getPosition();
+      for (i = 0; i < allMarkers.length; i++) {
+        var existingMarker = allMarkers[i];
+        var existingPos = existingMarker.getPosition();
 
-            //if a marker already exists in the same position as this marker
-            if (pos.equals(existingPos)) {
-                //update the position of the coincident marker by applying a small multipler to its coordinates
-                var newLat = pos.lat() + (Math.random() -.5) / 10000;// * (Math.random() * (max - min) + min);
-                var newLng = pos.lng() + (Math.random() -.5) / 10000;// * (Math.random() * (max - min) + min);
-                finalLatLng = new google.maps.LatLng(newLat,newLng);
-            }
+        //if a marker already exists in the same position as this marker
+        if (pos.equals(existingPos)) {
+          //update the position of the coincident marker by applying a small multipler to its coordinates
+          var newLat = pos.lat() + (Math.random() - .5) / 10000;// * (Math.random() * (max - min) + min);
+          var newLng = pos.lng() + (Math.random() - .5) / 10000;// * (Math.random() * (max - min) + min);
+          finalLatLng = new google.maps.LatLng(newLat, newLng);
         }
+      }
     }
 
     marker1 = new google.maps.Marker({
@@ -499,9 +544,9 @@
     };
 
 
-    
+
     gmarkers1.push(marker1);
-    
+
 
     // Marker click listener
     google.maps.event.addListener(marker1, 'click', (function (marker1, content) {
@@ -515,7 +560,7 @@
       }
     })(marker1, content));
 
-    
+
 
 
   }
@@ -524,25 +569,17 @@
 
   // Function on Change on Slide
   $(function () {
+    var slider = document.getElementById('slider');
+   
     var newclusters = [];
-    $("#slider-range").slider();
 
-    var startPos = $("#slider-range").slider("value");
-    endPos = '';
+    slider.noUiSlider.on('set', function (values, handle){ 
+      var low_bound  = values[0];
+      var high_bound = values[1];
 
-    $("#slider-range").on("slidestop", function (event, ui) {
-      endPos = ui.value;
-
-      if (startPos != endPos) {
-        var low_bound = $('#slider-range').slider("values")[0];
-        var high_bound = $('#slider-range').slider("values")[1];
-
-        // console.log(low_bound);
-        // console.log(high_bound);
         for (i = 0; i < markerCount; i++) {
           marker = gmarkers1[i];
-          // console.log(marker.category)
-          for (j = 0; j < marker.availability.length; j++){
+          for (j = 0; j < marker.availability.length; j++) {
             //Filter to show any markers with some of their time in the availability range
             if ((low_bound < marker.availability[j][0] && marker.availability[j][0] < high_bound) ||
               (low_bound < marker.availability[j][1] && marker.availability[j][1] < high_bound)) {
@@ -553,18 +590,17 @@
               marker.setVisible(false);
             }
           }
-            
-
-
         }
-
-      }
-      startPos = endPos;
+ 
+      // startPos = endPos;
       //Replace clusters with filtered ones
       markerCluster.clearMarkers();
       markerCluster.addMarkers(newclusters);
       newclusters = [];
+      
     });
+
+    
   });
 
 
@@ -642,26 +678,4 @@
 
   // google.maps.event.addDomListener(window, "load", initialize);
 </script>
-
-<script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-          content.style.display = "none";   
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-
-
-
-</script>
-
 {% endblock %}

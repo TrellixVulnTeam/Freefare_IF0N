@@ -179,6 +179,7 @@ input {
   border-top: none;
   background-color: white;
   min-width: 182px;
+  /* width: 520px; */
   max-width: 520pt;
   height: 60pt;
 }
@@ -193,6 +194,9 @@ input {
   cursor:hand;
   color: #342e37;
 
+  position: absolute;  
+  bottom: 16px;
+  left: 0px;
 }
 
 .search-button {
@@ -211,6 +215,7 @@ input {
   line-height: 16px;
   font-size: 16pt;
   padding: 10pt 10pt;
+
 }
 .search-button:hover {
   transform: scale(1.15);
@@ -226,10 +231,24 @@ input {
   top: 1px;
 }
 
+#search-box{
+    display: block;
+    overflow: hidden;
+    padding-right:10px;
+}
+
 #place{
-  /* width: max-content; */
-  max-width: 94%;
+  width: calc(96% - 28px);
+  height: 30px;
+  /* max-width: 94%; */
   box-sizing: border-box;
+  position: absolute;  
+  bottom: 6px;
+  left: 39px;
+}
+
+.ext-box {  
+  position: relative; 
 }
 
 
@@ -263,8 +282,8 @@ input {
     border-bottom-right-radius: 10pt;
   }
 
-  #place{
-    width: 80%;
+  .place{
+    width: 84%;
   }
 
 }
