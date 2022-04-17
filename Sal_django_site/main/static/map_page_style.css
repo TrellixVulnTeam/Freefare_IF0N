@@ -48,6 +48,40 @@ label {
   height: fit-content;
 }
 
+
+.noUi-connect {
+  background-color: #76b1eb;
+}
+
+#slider .noUi-handle {
+  height: 18px;
+  width: 18px;
+  top: -5px;
+  right: -9px; /* half the width */
+  border-radius: 9px;
+}
+
+#slider{
+  height: 10px;
+}
+
+.slider-area{
+  margin-top: .8rem;
+  margin-bottom: .5rem;
+  margin-left: 10px;
+}
+
+/* Hide markers on slider handles */
+.slider-styled .noUi-handle::before,
+.slider-styled .noUi-handle::after {
+    display: none;
+}
+
+#time-range p {
+  font-size: 13px;
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 931px) {
   .filter-label {
     font-size: 1.2vw;
@@ -68,6 +102,13 @@ label {
   .Donation {
     margin-right: 0;
     max-width: 50%;
+  }
+
+  .content {
+    /* padding: 0 18px; */
+    /* overflow: hidden; */
+    display: block !important;
+
   }
 
   .Map {
@@ -123,6 +164,10 @@ label {
     max-width: 100%;
   }
 
+  .expand_icon{
+    float: top;
+  }
+
   .filter-button-text{
     margin-top: 15px;
   }
@@ -130,7 +175,14 @@ label {
   .filter-title{
     display: none;
   }
+  
+  .gm-style-iw{
+    max-height: 236px !important;
+  }
 
+  .gm-style-iw-d{
+    max-height: 236px !important;
+  }
 
   .Map {
     order: 1;
@@ -139,6 +191,8 @@ label {
     width: 100%;
     z-index: 0;
   }
+
+
 
   #map {
     margin: auto;
@@ -173,6 +227,7 @@ label {
   }
 }
 
+<<<<<<< HEAD
 /* START OF TIME SLIDER STUFF */
 #time-range p {
   font-size: 14px;
@@ -384,5 +439,6 @@ label {
   opacity: 0.6;
   background: #f9fbfa;
 }
+=======
+>>>>>>> 264463f950199221bd3e47f05ef72c90663e2f52
 
-/* END OF TIME SLIDER STUFF */
