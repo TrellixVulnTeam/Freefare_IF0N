@@ -101,10 +101,30 @@ WSGI_APPLICATION = 'Sal_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'my_db',
+#         'USER' : 'hero',
+#         'PASSWORD': 'EliasDrake129?',
+#         'HOST' : 'localhost',
+#         'PORT' : '5432',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'defaultdb',
+        'USER' : 'doadmin',
+        'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
+        'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
+        'PORT' : '25061',
     }
 }
 
