@@ -485,21 +485,6 @@
     var title = marker["post_title"];
     var pos = new google.maps.LatLng(marker["post_lat"], marker["post_long"]);
 
-<<<<<<< HEAD
-    var content = "<div class=infowindow style='width:min-content;'>"+
-                  "<div class='info-image'>"+
-                  "<image src="+thumbnail+"></div>"+
-
-                  "<div class='row' style= 'max-width:340px; min-width:300px; margin-top: 20px; display:flex; flex-direction:row; color:#342E37;'>" + 
-                  "<div style='margin:auto; width: 260px;'>"+
-                  "<h6 class='info-box-title' style='font-size: 3vw; text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;'>" + title + "</h6>" +
-                  "<div class='info-box-bold' id='date-time' style='font-size: 2vw;>"+ wholeAvail +"</div>" + 
-                  "<p class='info-box'>" + marker["post_desc"] + "</p>"+
-                  "<br>"+
-                
-                  "<a class='read-more' href=/"+ marker["post_slug"] +" >Read More</a></div></div>"+
-                  "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
-=======
     var content = "<div class=infowindow>" +
       "<div class='info-image'>" +
       "<image src=" + thumbnail + " ></div>" +
@@ -510,7 +495,6 @@
       "<div class='info-box-bold' id='date-time' >" + wholeAvail + "</div>" +
       "<p class='info-box'>" + marker["post_desc"] + "</p>" +
       "<br>" +
->>>>>>> 264463f950199221bd3e47f05ef72c90663e2f52
 
       "<a class='read-more' href=/" + marker["post_slug"] + " >Read More</a></div></div>" +
       "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id=" + marker["post_slug"] + "' >Report</a></p></div></div>";
