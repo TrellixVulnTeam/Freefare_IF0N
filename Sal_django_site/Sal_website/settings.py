@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from urllib.parse import urlparse
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,11 +27,11 @@ load_dotenv(verbose=True, dotenv_path=os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
-
-# 'freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000'
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
+                          "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
+# ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000']
 # Application definition
 
 INSTALLED_APPS = [
@@ -117,7 +118,21 @@ WSGI_APPLICATION = 'Sal_website.wsgi.application'
 #         'PORT' : '5432',
 #     }
 # }
-DATABASES = {
+if os.getenv("DATABASE_URL", "") != "":
+    r = urlparse(os.environ.get("DATABASE_URL"))
+    DATABASE =  {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.path.relpath(r.path, "/"),
+        'USER' : r.username,
+        'PASSWORD': r.password,
+        'HOST' : r.hostname,
+        'PORT' : r.port,
+        'OPTIONS': {"sslmode": "require"},
+        }
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'defaultdb',
