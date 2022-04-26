@@ -1,6 +1,8 @@
 body {
   background-color: ghostwhite;
+  scrollbar-width: none;
 }
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
   display: none;
@@ -84,7 +86,7 @@ label {
 
 @media screen and (min-width: 931px) {
   .filter-label {
-    font-size: 1.2vw;
+    /* font-size: 1.2vw; */
     font-family: "metropolisregular", Arial, sans-serif;
     color: #3c91e6;
   }
@@ -208,11 +210,7 @@ label {
   }
 
 
-  /* .scroll-box {
-    overflow-y: scroll;
-    height: 200px;
-    padding: 1rem;
-  } */
+
 
   #donate-col {
     width: 100%;
@@ -227,137 +225,9 @@ label {
   }
 }
 
-<<<<<<< HEAD
-/* START OF TIME SLIDER STUFF */
-#time-range p {
-  font-size: 14px;
-}
-
-.ui-slider-horizontal {
-  height: 8px;
-  background: #d7d7d7;
-  border: 1px solid #bababa;
-  box-shadow: 0 1px 0 #fff, 0 1px 0 #cfcfcf inset;
-  clear: both;
-  margin: 8px 0;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
-}
-
-.ui-slider {
-  position: relative;
-  text-align: left;
-}
-
-.ui-slider-horizontal .ui-slider-range {
-  top: -1px;
-  height: 100%;
-}
-
-.ui-slider .ui-slider-range {
-  position: absolute;
-  z-index: 1;
-  height: 8px;
-  font-size: 0.7em;
-  display: block;
-  border: 1px solid #5ba8e1;
-  box-shadow: 0 1px 0 #aad6f6 inset;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
-  background: #81b8f3;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
-  background-size: 100%;
-  background-image: -webkit-gradient(
-    linear,
-    50% 0,
-    50% 100%,
-    color-stop(0%, #a0d4f5),
-    color-stop(100%, #81b8f3)
-  );
-  background-image: -webkit-linear-gradient(top, #a0d4f5, #81b8f3);
-  background-image: -moz-linear-gradient(top, #a0d4f5, #81b8f3);
-  background-image: -o-linear-gradient(top, #a0d4f5, #81b8f3);
-  background-image: linear-gradient(top, #a0d4f5, #81b8f3);
-}
-
-.ui-slider .ui-slider-handle {
-  border-radius: 50%;
-  background: #f9fbfa;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
-  background-size: 100%;
-  background-image: -webkit-gradient(
-    linear,
-    50% 0,
-    50% 100%,
-    color-stop(0%, #f2f2f2ff),
-    color-stop(100%, #f9fbfa)
-  );
-  background-image: -webkit-linear-gradient(top, #f2f2f2ff, #f9fbfa);
-  background-image: -moz-linear-gradient(top, #f2f2f2ff, #f9fbfa);
-  background-image: -o-linear-gradient(top, #f2f2f2ff, #f9fbfa);
-  background-image: linear-gradient(top, #f2f2f2ff, #f9fbfa);
-  width: 22px;
-  height: 22px;
-  -webkit-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6),
-    0 -1px 0 1px rgba(0, 0, 0, 0.15) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
-  -moz-box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6),
-    0 -1px 0 1px rgba(0, 0, 0, 0.15) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.6),
-    0 -1px 0 1px rgba(0, 0, 0, 0.15) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.9) inset;
-  -webkit-transition: box-shadow 0.3s;
-  -moz-transition: box-shadow 0.3s;
-  -o-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-}
-
-.ui-slider .ui-slider-handle {
-  position: absolute;
-  z-index: 2;
-  width: 22px;
-  height: 22px;
-  cursor: default;
-  border: none;
-  cursor: pointer;
-}
-
-.ui-slider .ui-slider-handle:after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  top: 50%;
-  margin-top: -4px;
-  left: 50%;
-  margin-left: -4px;
-  background: #30a2d2;
-  -webkit-box-shadow: 0 1px 1px 1px rgba(22, 73, 163, 0.7) inset, 0 1px 0 0 #fff;
-  -moz-box-shadow: 0 1px 1px 1px rgba(22, 73, 163, 0.7) inset, 0 1px 0 0 white;
-  box-shadow: 0 1px 1px 1px rgba(22, 73, 163, 0.7) inset, 0 1px 0 0 #fff;
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-  top: -0.5em;
-  margin-left: -0.6em;
-}
-
-.ui-slider a:focus {
-  outline: none;
-}
-
 .infowindow {
-<<<<<<< HEAD
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
-
 }
 .responsive {
   width: 100%;
@@ -369,52 +239,45 @@ label {
 
 .gm-style .gm-style-iw-c {
     padding-top: 0px;
-    padding-right: 12pt;
-    padding-bottom: 12pt;
     padding-left: 0pt;
 
-=======
+
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
 
 ::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+  background: transparent;
 }
 
-.gm-style .gm-style-iw-c {
-  padding-top: 0px;
-  padding-right: 12px;
-  padding-bottom: 12px;
-  padding-left: 0px;
->>>>>>> 0bde079341fd8a6271f12a072fb9056d8bc5d728
-}
 
 .info-box-title {
   font-family: "metropolissemi_bold", Arial, sans-serif;
+  font-size: 18px; text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;
 }
 
 .info-box-bold {
   font-family: "metropolismedium", Arial, sans-serif;
-  font-size: 2.4vw;
+  /* font-size: 2.4vw; */
 }
 
 .info-box {
   font-family: "metropolisregular_italic", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 13px;
   /* font-style: oblique; */
   /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
 }
 
 .read-more {
   font-family: "metropolismedium", Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 13px;
 }
 
 .info-image {
   /* max-width: 100%; */
   position: relative;
-  height: 20pt;
+  height: 140px;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -425,7 +288,6 @@ label {
 .info-image img {
   /* max-width: 100%; */
   width: 100%;
-  height: 100%;
   position: absolute;
   top: 50%;
   left: 0;
@@ -439,6 +301,5 @@ label {
   opacity: 0.6;
   background: #f9fbfa;
 }
-=======
->>>>>>> 264463f950199221bd3e47f05ef72c90663e2f52
+
 

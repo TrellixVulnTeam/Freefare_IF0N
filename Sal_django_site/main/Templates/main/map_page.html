@@ -491,20 +491,13 @@
 
       "<div class='row' style= 'max-width:340px; min-width:300px; margin-top: 20px; display:flex; flex-direction:row; color:#342E37;'>" +
       "<div style='margin:auto; width: 260px;'>" +
-      "<h6 class='info-box-title' style='font-size: 18px; text-align: left; margin-top:2%; margin-bottom:3%;  margin-left: auto; margin-right: 0;'>" + title + "</h6>" +
+      "<h6 class='info-box-title' style=''>" + title + "</h6>" +
       "<div class='info-box-bold' id='date-time' >" + wholeAvail + "</div>" +
       "<p class='info-box'>" + marker["post_desc"] + "</p>" +
       "<br>" +
 
       "<a class='read-more' href=/" + marker["post_slug"] + " >Read More</a></div></div>" +
       "<br><p class='info-box center'><a style='color:orange' href='{% url 'contact' %}?post_id=" + marker["post_slug"] + "' >Report</a></p></div></div>";
-
-    // var content = "<div class=infowindow style='width:fit-content;'>"+"<h5 class=center style='text-align: left; margin-top:2%; margin-bottom:3%; color: #342E37; margin-left: auto; margin-right: 0;c'>" + title + "</h5>" + 
-    // "<div class='row' style= 'display:flex; flex-direction:row; color:#342E37;'><image class='col' style= 'float: none; max-width: 30%; max-height: 30%; margin-left:auto; margin-right:0; max-width:40%; ' src="+thumbnail+" >" +
-    // "<div class='col' style='float:none; margin-top:auto; margin-bottom:auto; margin-left:0; margin-right:auto; max-width:49%'> <div id='date-time' style='font-size: 14px; font-weight:bold; color:#342E37;' >"+
-    // "Availability: "+ wholeAvail +"</div>" + "<p style='font-size: 16px; color:#342E37;'>" + marker["post_desc"] + "</p>"+
-    // "<br><strong ><a style=':blue' href="+ marker["post_slug"] +" >Read More</a></strong></div></div>"+
-    // "<br><p class=center style='float:none;'><a style='color:orange' href='{% url 'contact' %}?post_id="+ marker["post_slug"] +"' >Report</a></p></div></div>";
 
 
 
