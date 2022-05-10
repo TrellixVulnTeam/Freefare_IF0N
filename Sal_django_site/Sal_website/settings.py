@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'oauth2_provider',
     'social_django',
+    'escapejson',
     # 'social_django_mongoengine',
     'drf_social_oauth2',
     'corsheaders',
