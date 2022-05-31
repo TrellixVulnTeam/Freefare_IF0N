@@ -121,19 +121,17 @@ DATABASES = {
 #         'PORT' : '5432',
 #     }
 # }
-# if os.getenv("DATABASE_URL", "") != "":
-#     r = urlparse(os.environ.get("DATABASE_URL"))
-#     DATABASE =  {
+#
+# DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.path.relpath(r.path, "/"),
-#         'USER' : r.username,
-#         'PASSWORD': r.password,
-#         'HOST' : r.hostname,
-#         'PORT' : r.port,
-#         'OPTIONS': {"sslmode": "require"},
-#         }
+#         'NAME': 'defaultdb',
+#         'USER' : 'doadmin',
+#         'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
+#         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
+#         'PORT' : '25061',
 #     }
+<<<<<<< HEAD
 # else:
 # DATABASES = {
 #     'default': {
@@ -145,6 +143,10 @@ DATABASES = {
 #         'PORT' : '25061',
 #     }
 # }
+=======
+
+
+>>>>>>> 6367578963e2db2567e28b3f75fdf68b161e26b1
 
 
 # Password validation
