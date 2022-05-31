@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+from distutils.debug import DEBUG
 import os
+from urllib.parse import urlparse
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,11 +28,13 @@ load_dotenv(verbose=True, dotenv_path=os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = os.getenv("DEBUG", "False") == "True"
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# 'freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000'
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
+#                           "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
+# ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000']
 # Application definition
 
 INSTALLED_APPS = [
@@ -117,6 +121,7 @@ DATABASES = {
 #         'PORT' : '5432',
 #     }
 # }
+#
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -126,7 +131,8 @@ DATABASES = {
 #         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
 #         'PORT' : '25061',
 #     }
-# }
+
+
 
 
 # Password validation
