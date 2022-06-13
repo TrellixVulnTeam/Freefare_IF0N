@@ -31,10 +31,10 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 DEBUG = True
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
-#                           "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
-# ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
+                          "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
+['freefare.com', 'www.freefare.com', '167.71.106.235', 'http://127.0.0.1:8000']
 # Application definition
 
 INSTALLED_APPS = [
