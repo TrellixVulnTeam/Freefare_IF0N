@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MAIN_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 # This loads the environment keys
 load_dotenv(verbose=True, dotenv_path=os.path.join(BASE_DIR, '.env'))
 
@@ -173,7 +173,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'main/static')
 STATICFILES_DIRS = [
     # os.path.join(PROJECT_DIR, 'static'),
     os.path.join(BASE_DIR, 'node_modules'),
