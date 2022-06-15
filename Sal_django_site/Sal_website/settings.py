@@ -34,7 +34,7 @@ DEBUG = True
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
                           "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
-['freefare.com', 'www.freefare.com', '167.71.106.235', 'http://127.0.0.1:8000']
+# ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000']
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,7 +83,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [],
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,22 +131,8 @@ DATABASES = {
 #         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
 #         'PORT' : '25061',
 #     }
-<<<<<<< HEAD
-# else:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'defaultdb',
-#         'USER' : 'doadmin',
-#         'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
-#         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
-#         'PORT' : '25061',
-#     }
-# }
-=======
 
 
->>>>>>> 6367578963e2db2567e28b3f75fdf68b161e26b1
 
 
 # Password validation
