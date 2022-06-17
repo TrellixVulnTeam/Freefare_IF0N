@@ -173,7 +173,7 @@ USE_TZ = True
 
 STATIC_URL = 'main/static/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'main/static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'main/static')
 STATICFILES_DIRS = [
     # os.path.join(PROJECT_DIR, 'static'),
     os.path.join(PROJECT_DIR, 'node_modules'),
