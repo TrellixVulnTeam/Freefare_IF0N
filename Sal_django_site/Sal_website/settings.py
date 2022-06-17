@@ -174,8 +174,10 @@ USE_TZ = True
 STATIC_URL = '/main/static/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, '/main/static')
+print(f"STATIC ROOT: {STATIC_ROOT}")
+print(f"PROJECT_DIR: {PROJECT_DIR}")
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(STATIC_ROOT, 'static'),
     os.path.join(PROJECT_DIR, 'node_modules'),
     ('google','node_modules/@google'),
 ]
