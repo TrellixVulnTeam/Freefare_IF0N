@@ -180,7 +180,7 @@ PROJECT_DIR_ABOVE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath
 print(PROJECT_DIR_ABOVE)
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR_ABOVE, 'static'),
-    os.path.join(PROJECT_DIR, 'node_modules'),
+    os.path.join(PROJECT_DIR_ABOVE, 'node_modules'),
     ('google','node_modules/@google'),
 ]
 
