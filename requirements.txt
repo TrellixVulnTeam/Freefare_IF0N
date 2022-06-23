@@ -12,7 +12,7 @@ colorama==0.4.3
 coverage==5.4
 cryptography==3.3.2
 defusedxml==0.7.0rc1
-Django==3.1.13
+Django==3.1.14
 django-address==0.2.5
 django-address-model==1.0.3
 django-cors-headers==3.10.1
