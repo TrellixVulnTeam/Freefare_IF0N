@@ -12,12 +12,14 @@ from .models import InfoPrompt, CustomUser
 from .forms import CustomUserCreationForm, CustomUserChangeForm, ProfileForm
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
-from .views import test_homepage_search_input
+# from .views import test_homepage_search_input
 from django.http import HttpRequest
 from django.test import SimpleTestCase
 from django.urls import reverse
 import re
 from . import views
+
+
 
 # Unit Tests Start Here
 # ////////////////////////////////////////////
@@ -71,7 +73,7 @@ class CustomUserTestCase(TestCase):
 class CustomUserFormTest(TestCase):
     def setUp(self):
         self.user = CustomUser.objects.create(
-            email="user@mp.com", password="user", org_name="user", phone=12345678)
+            email="user@mp.com", password="user", your_name="user", phone=12345678)
 
     # Valid User Creation Form Data
     def test_UserForm_valid(self):
