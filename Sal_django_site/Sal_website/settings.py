@@ -14,7 +14,7 @@ from distutils.debug import DEBUG
 import os
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-from django_heroku import settings
+# from django_heroku import settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
