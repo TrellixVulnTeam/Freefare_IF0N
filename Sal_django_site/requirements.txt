@@ -32,6 +32,15 @@ gunicorn==20.1.0
 idna==2.10
 jwcrypto==1.0
 oauthlib==3.1.0
+openapi-spec-validator==0.2.9
+osmnx==1.0.1
+packaging==20.4
+pandas==1.1.2
+pandocfilters==1.4.2
+paramiko==2.10.1
+parso==0.7.0
+pendulum==2.1.2
+pexpect==4.8.0
 phonenumbers==8.12.7
 Pillow==7.2.0
 psycopg2==2.9.3
