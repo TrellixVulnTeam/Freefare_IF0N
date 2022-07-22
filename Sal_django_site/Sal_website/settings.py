@@ -124,9 +124,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'defaultdb',
         'USER' : 'doadmin',
-        'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
-        'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
-        'PORT' : '25061',
+        'PASSWORD': 'AVNS_0rub7t86vsLNkona9PY',
+        'HOST' : 'db-postgresql-nyc3-88337-do-user-11366552-0.b.db.ondigitalocean.com',
+        'PORT' : '25060',
     }
 }
 
