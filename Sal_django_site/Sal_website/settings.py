@@ -117,26 +117,18 @@ WSGI_APPLICATION = 'Sal_website.wsgi.application'
 # }
 
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd7bat3jlbuq1d1',
-        'USER' : 'frmtkhtixmtuyz',
-        'PASSWORD': 'a4f0ee19e46611cfa3f9f8c07c3834595631f95f4d4c7072813a2eb0c2c70a3f?',
-        'HOST' : 'ec2-3-219-229-143.compute-1.amazonaws.com',
-        'PORT' : '5432',
+        'NAME': 'defaultdb',
+        'USER' : 'doadmin',
+        'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
+        'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
+        'PORT' : '25061',
     }
 }
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'defaultdb',
-#         'USER' : 'doadmin',
-#         'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
-#         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
-#         'PORT' : '25061',
-#     }
 
 
 
