@@ -15,6 +15,7 @@ import os
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAIN_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -32,7 +33,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", 
                           "127.0.0.1,localhost,167.71.106.235,68.183.143.170,32.213.8.188,24.60.248.41,108.30.157.162").split(",")
 # ['freefoodsal.com', 'www.freefoodsal.com', '167.71.106.235', 'http://127.0.0.1:8000']
 # Application definition
@@ -108,32 +109,26 @@ WSGI_APPLICATION = 'Sal_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'my_db',
-#         'USER' : 'hero',
-#         'PASSWORD': 'EliasDrake129?',
-#         'HOST' : 'localhost',
-#         'PORT' : '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'defaultdb',
-#         'USER' : 'doadmin',
-#         'PASSWORD': 'AVNS_bQROVig2OWsQe7Z',
-#         'HOST' : 'db-postgresql-nyc1-60804-do-user-11366552-0.b.db.ondigitalocean.com',
-#         'PORT' : '25061',
-#     }
+
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'defaultdb',
+        'USER' : 'doadmin',
+        'PASSWORD': 'AVNS_0rub7t86vsLNkona9PY',
+        'HOST' : 'db-postgresql-nyc3-88337-do-user-11366552-0.b.db.ondigitalocean.com',
+        'PORT' : '25060',
+    }
+}
 
 
 
@@ -178,9 +173,8 @@ USE_TZ = True
 
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, '/main/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
 
 
 PROJECT_DIR_ABOVE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
