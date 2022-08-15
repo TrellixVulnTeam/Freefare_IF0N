@@ -271,8 +271,7 @@ def edit_rpost(request, single_slug = None):
                 return redirect('my-posts')  
             else:
                 messages.error(request, f"Your availability input is off. Try again.")
-                # for errors in avail_form.errors:
-                #     messages.error(request, f"Your availability is off. Try again.")
+
             
         
         else: 
@@ -316,13 +315,12 @@ def new_rpost(request):
                 messages.success(request, f"Your post has been uploaded")
                 return redirect('my-posts')  
             else:
-                for errors in avail_form.errors:
-                    messages.error(request, f"Your availability is off. Try again.")
-            
+                for error in avail_form.errors:
+                    messages.error(request, f"Your time input is off: "+error+"")
         
         else: 
-            for errors in recipient_post_form.errors:
-                    messages.error(request, f"Some of your input is off. Try again.")
+            for error in recipient_post_form.errors:
+                    messages.error(request, f"There's an error check the: "+error+"")
     else:
         recipient_post_form = RecipientPostForm(initial={'post_org_name': profile.org_name, 'post_org_email':profile.org_email,
         'post_org_phone':profile.org_phone,'post_org_address':profile.org_address,'post_org_city':profile.org_city,
@@ -362,8 +360,7 @@ def edit_dpost(request, single_slug = None):
                 return redirect('my-posts')  
             else:
                 messages.error(request, f"Your availability input is off. Try again.")
-                # for errors in avail_form.errors:
-                #     messages.error(request, f"Your availability is off. Try again.")
+
 
         else: 
             for errors in donor_post_form.errors:

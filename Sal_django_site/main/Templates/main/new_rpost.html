@@ -28,9 +28,12 @@
                         {{  recipient_post_form.media }}
                         {{  recipient_post_form.source }}
 
+                        <!-- Title -->
                         <div class="input-field title-div">
                             <label for="post_title">Post Title</label>
                             {{  recipient_post_form.post_title |add_class:"input" }}
+                            <span class="helper-text" data-error="Invalid Title"
+                            data-success="">{{  recipient_post_form.post_title.errors }}</span>
                         </div>
                         <div id="address-status">
                             <label for="diff-address">Does this surplus have a different address or contact than your
@@ -40,7 +43,7 @@
                             </label>
                         </div>
                         <div id="main-row" class="row">
-
+                            <!-- Image -->
                             <div id="top-of-column1" class="col left-col">
                                 {{  recipient_post_form.post_image }}
                                 <span class="helper-text" data-error="Invalid Image"
@@ -48,50 +51,73 @@
                                 <img id="post_image" class="post-img" />
                             </div>
                             <div id="top-of-column2" class="col right-col">
+                                <!-- Org Name -->
                                 <div class="input-field ">
                                     <label for="org-name">Your Organization's Name</label>
                                     {{  recipient_post_form.post_org_name |add_class:"validate" }}
+                                    <span class="helper-text" data-error="Invalid Name"
+                                    data-success="">{{  recipient_post_form.post_org_name.errors }}</span>
                                 </div>
 
                                 <div class="row">
+                                    <!-- Email -->
                                     <div class="col col-input input-field">
                                         <label for="org-email">Your Org Email</label>
                                         {{  recipient_post_form.post_org_email |add_class:"validate" }}
-                                    </div>
-                                    <span class="helper-text" data-error="Invalid Email"
+                                        <span class="helper-text" data-error="Invalid Email"
                                         data-success="">{{ recipient_post_form.email.errors }}</span>
+                                    </div>
+
+                                    <!-- Phone -->
                                     <div class="col col-input input-field">
                                         <label for="org-phone">Your Org Phone</label>
                                         {{  recipient_post_form.post_org_phone |add_class:"validate" }}
-                                    </div>
-                                    <span class="helper-text" data-error="Invalid Email"
+                                        <span class="helper-text" data-error="Invalid Phone Number"
                                         data-success="">{{  recipient_post_form.post_org_phone.errors }}</span>
+                                    </div>
+  
                                 </div>
 
+                                <!-- Address -->
                                 <div class="input-field">
                                     <label for="org_address ">Organization's Address</label>
                                     {{  recipient_post_form.post_org_address}}
+                                    <span class="helper-text" data-error="Invalid Address"
+                                    data-success="">{{  recipient_post_form.post_org_address.errors }}</span>
                                 </div>
 
                                 <div class="row">
+                                    <!-- City -->
                                     <div class="col col-input input-field">
                                         <label for="org_city">City</label>
                                         {{  recipient_post_form.post_org_city}}
+                                        <span class="helper-text" data-error="Invalid City"
+                                        data-success="">{{  recipient_post_form.post_org_city.errors }}</span>
                                     </div>
+
+                                    <!-- State -->
                                     <div class="col col-input input-field">
                                         <label for="org_state">State</label>
                                         {{  recipient_post_form.post_org_state}}
+                                        <span class="helper-text" data-error="Invalid State"
+                                        data-success="">{{  recipient_post_form.post_org_state.errors }}</span>
                                     </div>
                                 </div>
 
                                 <div class="row last-row">
+                                    <!-- Zipcode -->
                                     <div class="col col-input input-field">
                                         <label for="org_zipcode">Zipcode</label>
                                         {{  recipient_post_form.post_org_zipcode}}
+                                        <span class="helper-text" data-error="Invalid Zipcode"
+                                        data-success="">{{  recipient_post_form.post_org_zipcode.errors }}</span>
                                     </div>
+                                    <!-- Country -->
                                     <div class="col col-input input-field">
                                         <label for="org_country">Country</label>
                                         {{  recipient_post_form.post_org_country}}
+                                        <span class="helper-text" data-error="Invalid Country"
+                                        data-success="">{{  recipient_post_form.post_org_country.errors }}</span>
                                     </div>
                                 </div>
 
@@ -100,19 +126,23 @@
                         <div class="row">
                             <p class="section-label">When Do You Need The Donation Buy?</p>
                             <div class="avail-range row">
+                                <!-- Begin Date -->
                                 <div class="col post_date">
                                     <label for="post_begin_date">
                                         {{   recipient_post_form.post_begin_date|add_class:"select"}}
-                                        <span></span>
+                                        <span class="helper-text" data-error="Invalid Begin Date"
+                                        data-success="">{{  recipient_post_form.post_begin_date.errors }}</span>
                                     </label>
                                 </div>
                                 <div class="col post_date ">
                                     <h5> to </h5>
                                 </div>
+                                <!-- End Date -->
                                 <div class="col post_date">
                                     <label for="post_end_date">
                                         {{  recipient_post_form.post_end_date|add_class:"select"}}
-                                        <span></span>
+                                        <span class="helper-text" data-error="Invalid End Date"
+                                        data-success="">{{  recipient_post_form.post_end_date.errors }}</span>
                                     </label>
                                 </div>
                             </div>
@@ -183,25 +213,31 @@
                             <div id="deliver-status">
                                 <label for="id_post_deliver">Will you be able to pickup a donation for this need?
                                     {{  recipient_post_form.post_deliver}}
-                                    <span></span>
+                                    <span class="helper-text" data-error="Invalid Delivery Details"
+                                    data-success="">{{  recipient_post_form.post_deliver.errors }}</span>
                                 </label>
                             </div>
                             <div id="reccur-status">
                                 <label for="id_post_recurring">Will this need be recurring?
                                     {{  recipient_post_form.post_recurring | append_attr:"onclick:recurrCheck()" }}
-                                    <span></span>
+                                    <span class="helper-text" data-error="Invalid Recurrence Check"
+                                    data-success="">{{  recipient_post_form.post_recurring.errors }}</span>
                                 </label>
                             </div>
                             <div id="recurr-div" style="display: none;">
                                 <label for="recurrences-details" style="font-size:18; ">Describe the frequency of the
                                     reccurrence</label>
                                 {{  recipient_post_form.recurrences |add_class:"textarea" }}
+                                <span class="helper-text" data-error="Invalid Recurrence Input"
+                                data-success="">{{  recipient_post_form.recurrences.errors }}</span>
                             </div>
                         </div>
                         <div class="row">
                             <div>
                                 <label for="org_desc" style="font-size:18;">Give some details about your need</label>
                                 {{  recipient_post_form.post_desc |add_class:"textarea" }}
+                                <span class="helper-text" data-error="Invalid Post Description"
+                                data-success="">{{  recipient_post_form.post_desc.errors }}</span>
                             </div>
 
                         </div>
