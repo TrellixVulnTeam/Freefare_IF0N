@@ -18,7 +18,8 @@
             <div class="col-md-12 card hoverable">
                 <div class="card-content center"> 
                     <form method="post" class="post-form" action=" " enctype="multipart/form-data">
-                        {% csrf_token %}
+                        {% include 'main/recipient_form.html' %}
+                        <!-- {% csrf_token %}
                         {% load widget_tweaks %}
                         {{  recipient_post_form.media }}
                         {{  recipient_post_form.source }}
@@ -193,7 +194,7 @@
                                 {{  recipient_post_form.post_desc |add_class:"textarea desc" }}
                             </div>
                             </p>
-                        </div>
+                        </div> -->
                         <div>
                             <button type="submit" id="add-button" class="btn btn-lg">Update</button>
                         </div>
@@ -227,81 +228,7 @@
         reader.readAsDataURL(this.files[0]);
     };
 
-    $(function () {
-        window.onload = function () {
 
-            $('.avail-section').find('.avail-subsection').each(function () {
-                $(this).css('display', 'none');
-            });
-
-            $("#avail_0").css('display', 'block');
-            $("#avail_0").find('input[type=time]').prop("required", true);
-
-        };
-    })
-
-    $(function () {
-        $("#moreAvail").on('click', function () {
-            let count = 0
-            $('.avail-section').find('.avail-subsection:visible').each(function () {
-                count++
-            });
-            switch (count) {
-                case 1:
-                    $("#avail_1").css('display', 'block');
-                    break;
-                case 2:
-                    $("#avail_2").css('display', 'block');
-                    break;
-                case 3:
-                    $("#avail_3").css('display', 'block');
-                    break;
-                case 4:
-                    break;
-                default:  $("#avail_0").css('display', 'block');
-            }
-
-        })
-    })
-
-    $(function () {
-        $("#lessAvail").on('click', function () {
-            let count = 0
-            $('.avail-section').find('.avail-subsection:visible').each(function () {
-                count++
-            });
-            switch (count) {
-                case 4:
-                    $("#avail_3").css('display', 'none');
-                    $("#avail_3").find('input[type=time]').val('');
-                    $("#avail_3").find('input[type=checkbox]').prop("checked", false);
-                    break;
-                case 3:
-                    $("#avail_2").css('display', 'none');
-                    $("#avail_2").find('input[type=time]').val('');
-                    $("#avail_2").find('input[type=checkbox]').prop("checked", false);
-                    break;
-                case 2:
-                    $("#avail_1").css('display', 'none');
-                    $("#avail_1").find('input[type=time]').val('');
-                    $("#avail_1").find('input[type=checkbox]').prop("checked", false);
-                    break;
-                case 1:
-                    break;
-                default:  $("#avail_0").css('display', 'block');
-            }
-        })
-    })
-
-
-    function recurrCheck() {
-        var checkBox = document.getElementById("id_post_recurring");
-        if (checkBox.checked == true) {
-            document.getElementById('recurr-div').style.display = 'block';
-        } else {
-            document.getElementById('recurr-div').style.display = 'none';
-        }
-    }
 </script>
 
 {% endblock %}
